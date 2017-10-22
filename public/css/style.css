@@ -369,11 +369,11 @@ label {
 .navbar-logo {
     float: left;
     margin-right: 10px;
-    margin-top: 5px;
-    border: 10px solid transparent;
-    border-color: #4DCACA #31A3A3 #1D8888;
-    opacity: 0.9;
-    filter: alpha(opacity=90);
+    height: 30px;
+}
+.navbar-logo img{
+    height: 100%;
+    width: 100%;
 }
 .navbar-toggle {
     margin-top: 10px;
@@ -1409,6 +1409,7 @@ legend {
 .nav-tabs.nav-justified > .active > a:hover, 
 .nav-tabs.nav-justified > .active > a:focus {
     border: none !important;
+    cursor: pointer;
 }
 .nav-tabs > li.active > a, 
 .nav-tabs > li.active > a:hover, 

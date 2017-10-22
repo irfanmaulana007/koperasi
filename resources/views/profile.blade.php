@@ -1,6 +1,7 @@
 @extends('layout.app')
 @section('nav','dashboard')
 @section('subnav','profile')
+@section('title','Profile')
 
 @section('content')
 	@section('custom-css')
@@ -26,17 +27,6 @@
                     <div class="m-b-10">
                         <a href="#" class="btn btn-warning btn-block btn-sm">Change Picture</a>
                     </div>
-                    <!-- begin profile-highlight -->
-                    <div class="profile-highlight">
-                        <h4><i class="fa fa-cog"></i> Only My Contacts</h4>
-                        <div class="checkbox m-b-5 m-t-0">
-                            <label><input type="checkbox" /> Show my timezone</label>
-                        </div>
-                        <div class="checkbox m-b-0">
-                            <label><input type="checkbox" /> Show i have 14 contacts</label>
-                        </div>
-                    </div>
-                    <!-- end profile-highlight -->
                 </div>
                 <!-- end profile-left -->
                 <!-- begin profile-right -->

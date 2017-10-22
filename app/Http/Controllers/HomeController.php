@@ -27,6 +27,10 @@ class HomeController extends BaseController{
     }
 
     public function table(){
-    	return view('table');
+        return view('table');
+    }
+
+    public function error_404(){
+        return view('404-notfound');
     }
 }

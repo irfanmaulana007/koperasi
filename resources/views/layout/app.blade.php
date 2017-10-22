@@ -4,7 +4,7 @@
         <title>Laravel</title>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
     
         <!-- ================== BEGIN BASE CSS STYLE ================== -->
         <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
@@ -13,6 +13,7 @@
         <link href="plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
         <link href="css/animate.css" rel="stylesheet" />
         <link href="css/style.css" rel="stylesheet" />
+        <link href="css/style-responsive.css" rel="stylesheet" />
         <!-- ================== END BASE CSS STYLE ================== -->
 
         @yield('custom-css')
@@ -35,7 +36,7 @@
                 <div class="container-fluid">
                     <!-- begin mobile sidebar expand / collapse button -->
                     <div class="navbar-header">
-                        <a href="index.html" class="navbar-brand"><span class="navbar-logo"></span> Color Admin</a>
+                        <a href="/" class="navbar-brand"><span class="navbar-logo"><img src="{{ asset('img/logo.png') }}"></span></a>
                         <button type="button" class="navbar-toggle" data-click="sidebar-toggled">
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
@@ -120,10 +121,8 @@
                             </a>
                             <ul class="dropdown-menu animated fadeInLeft">
                                 <li class="arrow"></li>
-                                <li><a href="javascript:;">Edit Profile</a></li>
+                                <li><a href="profile">Edit Profile</a></li>
                                 <li><a href="javascript:;"><span class="badge badge-danger pull-right">2</span> Inbox</a></li>
-                                <li><a href="javascript:;">Calendar</a></li>
-                                <li><a href="javascript:;">Setting</a></li>
                                 <li class="divider"></li>
                                 <li><a href="javascript:;">Log Out</a></li>
                             </ul>
@@ -153,7 +152,7 @@
                     </ul>
                     <!-- end sidebar user -->
                     <!-- begin sidebar nav -->
-                    <ul class="nav">
+                    <ul class="sidenav nav">
                         <li class="nav-header">Navigation</li>
                         <li id="nav-dashboard" class="has-sub active">
                             <a href="javascript:;">
@@ -167,14 +166,35 @@
                                 <li id="subnav-profile"><a href="profile">Profile</a></li>
                             </ul>
                         </li>
-                        <li id="nav-table" class="has-sub">
+                        <li id="nav-user" class="has-sub">
                             <a href="javascript:;">
                                 <b class="caret pull-right"></b>
-                                <i class="fa fa-th"></i>
-                                <span>Tables</span>
+                                <i class="fa fa-user"></i>
+                                <span>User</span>
                             </a>
                             <ul class="sub-menu">
-                                <li id="subnav-table"><a href="table">Tables</a></li>
+                                <li id="subnav-user"><a href="user">User</a></li>
+                            </ul>
+                        </li>
+                        <li id="nav-history" class="has-sub">
+                            <a href="javascript:;">
+                                <b class="caret pull-right"></b>
+                                <i class="fa fa-history"></i>
+                                <span>History</span>
+                            </a>
+                            <ul class="sub-menu">
+                                <li id="subnav-history_order"><a href="history_order">Order</a></li>
+                                <li id="subnav-history_shipment"><a href="history_shipment">Shipment</a></li>
+                            </ul>
+                        </li>
+                        <li id="nav-summary" class="has-sub">
+                            <a href="javascript:;">
+                                <b class="caret pull-right"></b>
+                                <i class="fa fa-bar-chart"></i>
+                                <span>Summary</span>
+                            </a>
+                            <ul class="sub-menu">
+                                <li id="subnav-summary_report"><a href="summary_report">Summary Report</a></li>
                             </ul>
                         </li>
                         <!-- begin sidebar minify button -->
@@ -190,6 +210,14 @@
 
             <!-- begin body content -->
             <div id="content" class="content">
+                <!-- begin breadcrumb -->
+                <ol class="breadcrumb pull-right">
+                    <li><a href="javascript:;" class="text-capitalize">@yield('nav')</a></li>
+                    <li class="active text-capitalize">@yield('title')</li>
+                </ol>
+                <!-- end breadcrumb -->
+                <!-- begin page-header -->
+                <h1 class="page-header">@yield('title') <small>@yield('subtitle')</small></h1>
                 @yield('content')
             </div>
             <!-- end body content -->
@@ -237,9 +265,9 @@
                 App.init();
                 
                 // Set Sidenav active
-                $('.nav').find('li').removeClass('active');
-                $('.nav').find("#nav-@yield('nav')").addClass('active');
-                $('.sub-menu').find('li').removeClass('active');
+                $('.sidenav>li').removeClass('active');
+                $('.sidenav').find("#nav-@yield('nav')").addClass('active');
+                $('.sub-menu>li').removeClass('active');
                 $('.sub-menu').find("#subnav-@yield('subnav')").addClass('active');
             });
         </script>
