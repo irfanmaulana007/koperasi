@@ -32,6 +32,7 @@
 <!-- End Section Table -->
 
 <!-- Section Modal -->
+@section('btn-add-display', 'show')
 @section('modal-title', 'Add New User')
 
 @section('modal-form')

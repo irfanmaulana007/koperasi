@@ -18,7 +18,10 @@
 	                    </div>
 	                    <h4 class="panel-title">Data Table - Default</h4>
 	                </div>
-	                <div class="panel-body">
+	                <div id="body-content" class="panel-body">         
+				        <div id="table-loading" style="position: absolute; background-color: rgba(255, 255, 255, .5); display: none; z-index: 1;">
+				            <span class="spinner" style="top: 50%"></span>
+				        </div>
 			            <ul class="nav nav-tabs">
 			                @yield('table-tab')
 			            </ul>
@@ -26,7 +29,7 @@
 			            <div id="btn-action" class="row">
 			            	<div class="col-md-12">
 								<div class="pull-left">
-									<button type="button" class="btn btn-primary m-r-5 m-b-5" data-toggle="modal" data-target="#modal-dialog"><i class="fa fa-plus"></i> Add</button>
+									<button type="button" id="btn-add" class="btn btn-primary m-r-5 m-b-5 @yield('btn-add-display')" data-toggle="modal" data-target="#modal-dialog"><i class="fa fa-plus"></i> Add</button>
 								</div>
 								<div class="pull-right">
 									<button type="button" id="btn-print" class="btn btn-success m-r-5 m-b-5"><i class="fa fa-print"></i> Print</button>

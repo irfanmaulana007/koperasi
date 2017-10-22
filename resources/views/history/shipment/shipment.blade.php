@@ -13,13 +13,12 @@
 @stop
 <!-- End Section Table Nav-tab -->
 
+<!-- Section Modal -->
+@section('btn-add-display', 'hide')
+<!-- End Section Modal -->
+
 @section('table-content')
-     <table id="data-table" class="table table-striped table-bordered">
-         
-        <div id="table-loading" style="position: absolute; background-color: rgba(255, 255, 255, .5); display: none;">
-            <span class="spinner" style="top: 50%"></span>
-        </div>
-     </table>
+     <table id="data-table" class="table table-striped table-bordered"></table>
 @stop
 
 @section('custom-js')
@@ -28,9 +27,9 @@
     <script>
         $(document).ready(function(){
             TableManageDefault.init();
-            
-            var table_height = $(".table-responsive").height();
-            var table_width = $(".table-responsive").width();
+
+            var table_height = $("#body-content").height();
+            var table_width = $("#body-content").width();
             $("#table-loading").css("height", table_height);
             $("#table-loading").css("width", table_width);
         });
