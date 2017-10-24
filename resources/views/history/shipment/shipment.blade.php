@@ -26,7 +26,7 @@
     <script src="js/table-manage-default.demo.js"></script>
     <script>
         $(document).ready(function(){
-            TableManageDefault.init();
+            // TableManageDefault.init();
 
             var table_height = $("#body-content").height();
             var table_width = $("#body-content").width();
