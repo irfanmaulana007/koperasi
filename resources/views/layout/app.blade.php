@@ -166,6 +166,16 @@
                                 <li id="subnav-profile"><a href="profile">Profile</a></li>
                             </ul>
                         </li>
+                        <li id="nav-order" class="has-sub">
+                            <a href="javascript:;">
+                                <b class="caret pull-right"></b>
+                                <i class="fa fa-file-text-o"></i>
+                                <span>Order</span>
+                            </a>
+                            <ul class="sub-menu">
+                                <li id="subnav-order"><a href="order">Create Order</a></li>
+                            </ul>
+                        </li>
                         <li id="nav-user" class="has-sub">
                             <a href="javascript:;">
                                 <b class="caret pull-right"></b>
@@ -183,8 +193,8 @@
                                 <span>History</span>
                             </a>
                             <ul class="sub-menu">
-                                <li id="subnav-history_order"><a href="history_order">Order</a></li>
-                                <li id="subnav-history_shipment"><a href="history_shipment">Shipment</a></li>
+                                <li id="subnav-history_order"><a href="history-order">Order</a></li>
+                                <li id="subnav-history_shipment"><a href="history-shipment">Shipment</a></li>
                             </ul>
                         </li>
                         <li id="nav-summary" class="has-sub">
@@ -194,7 +204,7 @@
                                 <span>Summary</span>
                             </a>
                             <ul class="sub-menu">
-                                <li id="subnav-summary_report"><a href="summary_report">Summary Report</a></li>
+                                <li id="subnav-summary_report"><a href="summary-report">Summary Report</a></li>
                             </ul>
                         </li>
                         <!-- begin sidebar minify button -->

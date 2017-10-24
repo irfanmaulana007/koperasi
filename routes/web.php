@@ -21,13 +21,13 @@ Route::get('/table', 'HomeController@table');
 Route::get('/user', 'UserController@index');
 
 // History
-Route::get('/history_order', 'HistoryController@order');
-Route::get('/history_order_all', 'HistoryController@order_all');
-Route::get('/history_order_pickuponly', 'HistoryController@order_pickuponly');
+Route::get('/history-order', 'HistoryController@order');
+Route::get('/history-order-all', 'HistoryController@order_all');
+Route::get('/history_order-pickuponly', 'HistoryController@order_pickuponly');
 
-Route::get('/history_shipment', 'HistoryController@shipment');
-Route::get('/history_shipment_all', 'HistoryController@shipment_all');
-Route::get('/history_shipment_pickuponly', 'HistoryController@shipment_pickuponly');
+Route::get('/history-shipment', 'HistoryController@shipment');
+Route::get('/history-shipment-all', 'HistoryController@shipment_all');
+Route::get('/history-shipment-pickuponly', 'HistoryController@shipment_pickuponly');
 
 
 Route::get('/{url}', 'HomeController@error_404');

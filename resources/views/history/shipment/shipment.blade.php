@@ -6,8 +6,8 @@
 
 <!-- Section Table Nav-tab -->
 @section('table-tab')   
-    <li id="history_shipment_all" class="tab-items"><a>All</a></li>
-    <li id="history_shipment_pickuponly" class="tab-items"><a>Pickup Only</a></li>
+    <li id="history-shipment-all" class="tab-items"><a>All</a></li>
+    <li id="history-shipment-pickuponly" class="tab-items"><a>Pickup Only</a></li>
     <li id="list3" class="tab-items"><a>Send Dokumen</a></li>
     <li id="list4" class="tab-items"><a>Return Item</a></li>
 @stop
@@ -36,7 +36,7 @@
 
         reload_data();
         function reload_data() {
-            $("#data-table").load("{{ URL::to('history_shipment_all') }}");
+            $("#data-table").load("{{ URL::to('history-shipment-all') }}");
             $("#table-loading").hide();
         }
 
