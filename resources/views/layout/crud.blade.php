@@ -18,7 +18,7 @@
 	                    </div>
 	                    <h4 class="panel-title">Data Table - Default</h4>
 	                </div>
-	                <div id="body-content" class="panel-body">         
+	                <div id="body-content" class="panel-body">
 				        <div id="table-loading" style="position: absolute; background-color: rgba(255, 255, 255, .5); display: none; z-index: 1;">
 				            <span class="spinner" style="top: 50%"></span>
 				        </div>

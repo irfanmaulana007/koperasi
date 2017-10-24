@@ -6363,3 +6363,10 @@ body .bootstrap-datetimepicker-widget table td {
     width: 32px;
     line-height: 32px;
 }
+
+
+/* Customize */
+form label{
+    line-height: 34px;
+    margin-bottom: 0;
+}

@@ -17,6 +17,10 @@ Route::get('/profile', 'HomeController@profile');
 Route::get('/invoice', 'HomeController@invoice');
 Route::get('/table', 'HomeController@table');
 
+// Order
+Route::get('/new-order', 'OrderController@new_order');
+Route::get('/create-order', 'OrderController@create_order');
+
 // User
 Route::get('/user', 'UserController@index');
 

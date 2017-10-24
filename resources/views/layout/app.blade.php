@@ -173,7 +173,7 @@
                                 <span>Order</span>
                             </a>
                             <ul class="sub-menu">
-                                <li id="subnav-order"><a href="order">Create Order</a></li>
+                                <li id="subnav-create-order"><a href="new-order">Create Order</a></li>
                             </ul>
                         </li>
                         <li id="nav-user" class="has-sub">
