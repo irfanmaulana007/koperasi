@@ -269,8 +269,6 @@
         <script src="plugins/slimscroll/jquery.slimscroll.min.js"></script>
         <script src="plugins/jquery-cookie/jquery.cookie.js"></script>
         <!-- ================== END BASE JS ================== -->
-
-        @yield('custom-js')
         
         <!-- ================== BEGIN PAGE LEVEL JS ================== -->
   {{--       <script src="plugins/gritter/js/jquery.gritter.js"></script>
@@ -297,5 +295,7 @@
                 $('.sub-menu').find("#subnav-@yield('subnav')").addClass('active');
             });
         </script>
+        
+        @yield('custom-js')
     </body>
 </html>

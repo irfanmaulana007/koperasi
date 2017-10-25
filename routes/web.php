@@ -37,5 +37,8 @@ Route::get('/history-shipment', 'HistoryController@shipment');
 Route::get('/history-shipment-all', 'HistoryController@shipment_all');
 Route::get('/history-shipment-pickuponly', 'HistoryController@shipment_pickuponly');
 
+// Summary
+Route::get('/summary-report', 'SummaryController@index');
+
 
 Route::get('/{url}', 'HomeController@error_404');

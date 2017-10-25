@@ -14,6 +14,7 @@
                 <th>Platform(s)</th>
                 <th>Engine version</th>
                 <th>CSS grade</th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
@@ -24,6 +25,10 @@
                 <td>Win 95+</td>
                 <td>4</td>
                 <td>X</td>
+                <td>
+                    <span style="margin-right: 5px;"><a href="edit-order" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i> Edit</a></span>
+                    <span style="margin-right: 5px;"><a href="" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i> Delete</a></span>
+                </td>
             </tr>
             <!-- begin foreach -->
         </tbody>
