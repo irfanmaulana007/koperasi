@@ -423,7 +423,7 @@
                                             <br><br>
                                             <div class="row">
                                                 <center>
-                                                    <a class="btn btn-success btn-lg" role="button">Finish Order</a>
+                                                    <a href="new-order" class="btn btn-success btn-lg" role="button">Finish Order</a>
                                                 </center>
                                             </div>                                
                                         </div>

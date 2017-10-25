@@ -13,7 +13,11 @@ class OrderController extends BaseController{
     public function new_order(){
     	return view('order.new');
     }
+
     public function create_order(){
+    	return view('order.create');
+    }
+    public function edit_order(){
     	return view('order.create');
     }
 }

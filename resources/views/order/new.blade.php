@@ -24,6 +24,75 @@
                                 <a href="" class="btn btn-primary m-r-5 m-b-5"><i class="fa fa-upload"></i> Excel Upload</a>
                                 <a href="create-order" class="btn btn-primary m-r-5 m-b-5"><i class="fa fa-edit"></i> Manual Input</a>
                             </div>
+                            <div class="pull-right">
+                                <button class="btn btn-success m-r-5 m-b-5">Finish Order and Request Pickup</button>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="alert alert-info m-b-0">
+                        <div class="row" style="text-align: center">
+                            <div class="col-md-2 col-sm-4">
+                                Total Shipment : <br>
+                                <b>2 Shipment(s)</b>
+                            </div>
+                            <div class="col-md-2 col-sm-4">
+                                Total Shipping Cost :<br>
+                                <b>Rp 5.000.000</b>
+                            </div>
+                            <div class="col-md-2 col-sm-4">
+                                Total Insurance Cost :<br>
+                                <b>Rp 5.000.000</b>
+                            </div>
+                            <div class="col-md-2 col-sm-4">
+                                Total Packing Cost :<br>
+                                <b>Rp 0</b>
+                            </div>
+                            <div class="col-md-2 col-sm-4">
+                                Do you have voucher code ?<br>
+                                <input type="text" class="form-control" name="voucher" placeholder="Input kode voucher" style="margin: 5px 0;">
+                                <button class="btn btn-primary m-r-5 m-b-5 btn-block">Generate</button>
+                            </div>
+                            <div class="col-md-2 col-sm-4">
+                                Grand Total<br>
+                                <b>Rp 10.000.000</b>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">      
+                        <div class="col-md-12">
+                            <table id="data-table" class="table table-striped table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Shipment ID</th>
+                                        <th>Sender Name</th>
+                                        <th>Item Name</th>
+                                        <th>Vendor</th>
+                                        <th>Attribute</th>
+                                        <th>Shipping Cost</th>
+                                        <th>Insurance Cost</th>
+                                        <th>Packing Cost</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><a href="">SHM1710250002</a></td>
+                                        <td>Irfan Maulana</td>
+                                        <td>Macbook pro Retina 15"</td>
+                                        <td>JNE YES</td>
+                                        <td></td>
+                                        <td>Rp 18.500.000</td>
+                                        <td>Rp 60.000</td>
+                                        <td>Rp 0</td>
+                                        <td>
+                                            <span style="margin-right: 5px;"><a href="edit-order" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i> Edit</a></span>
+                                            <span style="margin-right: 5px;"><a href="" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i> Delete</a></span>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 </div>

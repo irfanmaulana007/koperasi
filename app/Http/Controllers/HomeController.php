@@ -14,6 +14,10 @@ class HomeController extends BaseController{
     	return view('layout.app');
     }
     
+    public function login(){
+        return view('auth.login');
+    }
+    
     public function content(){
     	return view('content');
     }

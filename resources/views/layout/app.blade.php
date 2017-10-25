@@ -158,13 +158,19 @@
                             <a href="javascript:;">
                                 <b class="caret pull-right"></b>
                                 <i class="fa fa-laptop"></i>
-                                <span>Dashboard</span>
+                                <span>Feature</span>
                             </a>
                             <ul class="sub-menu">
                                 <li id="subnav-content"><a href="content">Content</a></li>
                                 <li id="subnav-invoice"><a href="invoice">Invoice</a></li>
                                 <li id="subnav-profile"><a href="profile">Profile</a></li>
                             </ul>
+                        </li>
+                        <li id="nav-dashboard" class="active">
+                            <a href="/">
+                                <i class="fa fa-laptop"></i>
+                                <span>Dashboard</span>
+                            </a>
                         </li>
                         <li id="nav-order" class="has-sub">
                             <a href="javascript:;">
@@ -205,6 +211,16 @@
                             </a>
                             <ul class="sub-menu">
                                 <li id="subnav-summary_report"><a href="summary-report">Summary Report</a></li>
+                            </ul>
+                        </li>
+                        <li id="nav-auth" class="has-sub">
+                            <a href="javascript:;">
+                                <b class="caret pull-right"></b>
+                                <i class="fa fa-unlock-alt"></i>
+                                <span>Auth</span>
+                            </a>
+                            <ul class="sub-menu">
+                                <li id="subnav-login"><a href="login">login</a></li>
                             </ul>
                         </li>
                         <!-- begin sidebar minify button -->
