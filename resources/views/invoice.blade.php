@@ -1,5 +1,5 @@
 @extends('layout.app')
-@section('nav','dashboard')
+@section('nav','feature')
 @section('subnav','invoice')
 
 @section('content')

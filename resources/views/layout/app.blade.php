@@ -44,16 +44,24 @@
                         </button>
                     </div>
                     <!-- end mobile sidebar expand / collapse button -->
-                    
-                    <!-- begin header navigation right -->
-                    <ul class="nav navbar-nav navbar-right">
+                    <!-- begin header navigation left -->
+                    <ul class="nav navbar-nav navbar-left">
                         <li>
-                            <form class="navbar-form full-width">
+                            <form class="navbar-form full-width" action="">
                                 <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="Enter keyword" />
+                                    <input type="text" class="form-control" placeholder="Cek Resi" />
                                     <button type="submit" class="btn btn-search"><i class="fa fa-search"></i></button>
                                 </div>
                             </form>
+                        </li>
+                    </ul>
+                    <!-- end header navigation left -->
+                    <!-- begin header navigation right -->
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href=""javascript:;>
+                                Saldo : <b>Rp 135.000</b>
+                            </a>
                         </li>
                         <li class="dropdown">
                             <a href="javascript:;" data-toggle="dropdown" class="dropdown-toggle f-s-14">
@@ -154,7 +162,7 @@
                     <!-- begin sidebar nav -->
                     <ul class="sidenav nav">
                         <li class="nav-header">Navigation</li>
-                        <li id="nav-dashboard" class="has-sub active">
+                        <li id="nav-feature" class="has-sub active">
                             <a href="javascript:;">
                                 <b class="caret pull-right"></b>
                                 <i class="fa fa-laptop"></i>
@@ -192,6 +200,16 @@
                                 <li id="subnav-user"><a href="user">User</a></li>
                             </ul>
                         </li>
+                        <li id="nav-courier" class="has-sub">
+                            <a href="javascript:;">
+                                <b class="caret pull-right"></b>
+                                <i class="fa fa-truck"></i>
+                                <span>Courier</span>
+                            </a>
+                            <ul class="sub-menu">
+                                <li id="subnav-courier_list"><a href="courier-list">Courier List</a></li>
+                            </ul>
+                        </li>
                         <li id="nav-history" class="has-sub">
                             <a href="javascript:;">
                                 <b class="caret pull-right"></b>
@@ -211,6 +229,16 @@
                             </a>
                             <ul class="sub-menu">
                                 <li id="subnav-summary_report"><a href="summary-report">Summary Report</a></li>
+                            </ul>
+                        </li>
+                        <li id="nav-price" class="has-sub">
+                            <a href="javascript:;">
+                                <b class="caret pull-right"></b>
+                                <i class="fa fa-calculator"></i>
+                                <span>Price</span>
+                            </a>
+                            <ul class="sub-menu">
+                                <li id="subnav-check_price"><a href="check-price">Check Price</a></li>
                             </ul>
                         </li>
                         <li id="nav-auth" class="has-sub">
@@ -251,7 +279,21 @@
 
         <!-- begin #footer -->
         <div id="footer" class="footer">
-            &copy; 2014 Color Admin Responsive Admin Template - Sean Ngu All Rights Reserved
+            <div class="row">
+                <div class="col-md-6">
+                    Copyright &copy; 2017, PT. Solusi Teknologi Logistik. All rights reserved.
+                </div>
+                <div class="col-md-6">
+                    <div class="pull-right">
+                        <button class="btn btn-primary">
+                            Indonesia
+                        </button>
+                        <button class="btn btn-default">
+                            English
+                        </button>
+                    </div>
+                </div>
+            </div>
         </div>
         <!-- end #footer -->
 

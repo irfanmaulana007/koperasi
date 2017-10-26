@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/', 'HomeController@content');
+Route::get('/', 'HomeController@index');
 Route::get('/content', 'HomeController@content');
 Route::get('/profile', 'HomeController@profile');
 Route::get('/invoice', 'HomeController@invoice');
@@ -37,8 +37,14 @@ Route::get('/history-shipment', 'HistoryController@shipment');
 Route::get('/history-shipment-all', 'HistoryController@shipment_all');
 Route::get('/history-shipment-pickuponly', 'HistoryController@shipment_pickuponly');
 
+// Courier
+Route::get('/courier-list', 'CourierController@courier_list');
+
 // Summary
 Route::get('/summary-report', 'SummaryController@index');
+
+// Price
+Route::get('/check-price', 'PricingController@check_price');
 
 
 Route::get('/{url}', 'HomeController@error_404');

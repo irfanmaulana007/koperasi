@@ -1,5 +1,5 @@
 @extends('layout.app')
-@section('nav','dashboard')
+@section('nav','feature')
 @section('subnav','content')
 @section('title','Content')
 @section('subtitle','List of Content')
@@ -185,7 +185,7 @@
         </div>
         <!-- end col-6 -->
         <!-- begin col-6 -->
-        <div class="col-md-6">
+        <div class="col-md-6" style="margin-bottom: 20px;">
             <!-- begin panel -->
             <div class="panel panel-inverse" data-sortable-id="form-validation-1">
                 <div class="panel-heading">
@@ -263,7 +263,7 @@
         </div>
         <!-- end col-6 -->
         <!-- begin col-6 -->
-        <div class="col-md-6" style="margin-bottom: 10px;">
+        <div class="col-md-6" style="margin-bottom: 50px;">
             <!-- begin panel -->
             <div class="panel panel-inverse" data-sortable-id="ui-general-1">
                 <div class="panel-heading">

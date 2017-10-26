@@ -901,7 +901,7 @@ label {
 
 .footer {
     z-index: 1020;
-    padding: 10px 0;
+    padding: 20px 0;
     margin: 0 25px 0 245px;
     border-top: 1px solid #CAD0D6;
     line-height: 20px;
@@ -6369,4 +6369,21 @@ body .bootstrap-datetimepicker-widget table td {
 form label{
     line-height: 34px;
     margin-bottom: 0;
+}
+
+section#promo .promo-box{
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: 100%;
+    height: auto;
+    transition: .1s;
+}
+section#promo .promo-box:hover{
+    border-color: #000;
+    cursor: pointer;
+}
+section#promo .promo-box img{
+    width: 100%;
+    height: 100%;
+    padding: 20px;
 }
