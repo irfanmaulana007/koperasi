@@ -13,4 +13,21 @@ class UserController extends BaseController{
     public function index(){
     	return view('user.view');
     }
+
+    public function add(){
+    	$action = "add";
+    	return view('user.modal')->with("action", $action);
+    }
+
+    public function edit($id){
+    	$action = "edit";
+    	return view('user.modal')->with("action", $action);
+    }
+
+    public function delete($id){
+    	$action = "delete";
+    	return view('user.modal')
+				->with("action", $action)
+				->with("id", $id);
+    }
 }

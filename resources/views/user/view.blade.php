@@ -3,6 +3,7 @@
 @section('subnav','user')
 @section('title','User')
 @section('subtitle','404 Users')
+@section('btn-add-display', 'show')
 
 <!-- Section Table -->
 @section('table-content')
@@ -26,8 +27,8 @@
                 <td>4</td>
                 <td>X</td>
                 <td>
-                    <span style="margin-right: 5px;"><a href="edit-order" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i> Edit</a></span>
-                    <span style="margin-right: 5px;"><a href="" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i> Delete</a></span>
+                    <span style="margin-right: 5px;"><button class="btn btn-primary btn-sm edit-btn" data-id="user007"><i class="fa fa-edit"></i> Edit</button></span>
+                    <span style="margin-right: 5px;"><button class="btn btn-danger btn-sm delete-btn" data-id="user007"><i class="fa fa-trash"></i> Delete</button></span>
                 </td>
             </tr>
             <!-- begin foreach -->
@@ -35,36 +36,3 @@
     </table>
 @stop
 <!-- End Section Table -->
-
-<!-- Section Modal -->
-@section('btn-add-display', 'show')
-@section('modal-title', 'Add New User')
-
-@section('modal-form')
-	<div class="form-group">
-	    <label class="control-label col-md-4 col-sm-4" for="fullname">Full Name * :</label>
-	    <div class="col-md-6 col-sm-6">
-	        <input class="form-control" type="text" id="fullname" name="fullname" placeholder="Required" data-parsley-required="true" />
-	    </div>
-	</div>
-    <div class="form-group">
-        <label class="control-label col-md-4 col-sm-4" for="email">Email * :</label>
-        <div class="col-md-6 col-sm-6">
-            <input class="form-control" type="text" id="email" name="email" data-parsley-type="email" placeholder="Email" data-parsley-required="true" />
-        </div>
-    </div>
-    <div class="form-group">
-        <label class="control-label col-md-4 col-sm-4" for="website">Website :</label>
-        <div class="col-md-6 col-sm-6">
-            <input class="form-control" type="url" id="website" name="website" data-parsley-type="url" placeholder="url" />
-        </div>
-    </div>
-    <div class="form-group">
-        <label class="control-label col-md-4 col-sm-4"></label>
-        <div class="col-md-6 col-sm-6">
-            <button type="submit" class="btn btn-primary">Submit</button>
-            <button type="button" class="btn btn-white" data-dismiss="modal">Cancel</button>
-        </div>
-    </div>
-@stop
-<!-- End Section Modal -->

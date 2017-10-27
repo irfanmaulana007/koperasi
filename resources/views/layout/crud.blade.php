@@ -29,7 +29,7 @@
 			            <div id="btn-action" class="row">
 			            	<div class="col-md-12">
 								<div class="pull-left">
-									<button type="button" id="btn-add" class="btn btn-primary m-r-5 m-b-5 @yield('btn-add-display')" data-toggle="modal" data-target="#modal-dialog"><i class="fa fa-plus"></i> Add</button>
+									<button type="button" id="btn-add" class="btn btn-primary m-r-5 m-b-5 add-btn @yield('btn-add-display')"><i class="fa fa-plus"></i> Add</button>
 								</div>
 								<div class="pull-right">
 									<button type="button" id="btn-print" class="btn btn-success m-r-5 m-b-5"><i class="fa fa-print"></i> Print</button>
@@ -54,17 +54,18 @@
 	    <!-- end row -->
 
 	    <!-- #modal -->
-        <div class="modal fade" id="modal-dialog">
+        <div class="modal fade" id="modal-form">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                        <h4 class="modal-title">@yield('modal-title')</h4>
+                        <h4 class="modal-title text-capitalize"></h4>
                     </div>
                     <div class="modal-body">
-                        <form class="form-horizontal form-bordered" data-parsley-validate="true" name="demo-form">
-                        	@yield('modal-form')
-	                    </form>
+					        <div id="modal-loading" style="display: none;">
+					            <span class="spinner" style="margin-left: -20px;"></span>
+					        </div>
+                    	<div id="modal-component" style="min-height: 100px;"></div>
                     </div>
                 </div>
             </div>
@@ -88,6 +89,73 @@
 					window.print();
 				});
 			});
+
+			var action ="";
+
+	        // Ajax load modal
+		        // Add
+		        $(".add-btn").click(function(){
+		        	var modul = "@yield('subnav')";
+		        	$(".modal-title").html("Add " + modul);
+		            var url = modul + "-add/";
+
+		        	$("#modal-form").modal('show');
+
+		            $.ajax({
+		                url: url,
+		                beforeSend: function () {
+		                    $("#modal-component").empty();
+		                    $("#modal-loading").show();
+		                },
+		                success: function (message) {
+		                    $("#modal-loading").hide();
+		                    $("#modal-component").html(message);
+		                }
+		            });
+		        });
+
+		        // Edit
+		        $(".edit-btn").click(function(){
+		        	var modul = "@yield('subnav')";
+		        	$(".modal-title").html("Edit " + modul);
+		            var url = modul + "-edit/" + $(this).data("id");
+
+		        	$("#modal-form").modal('show');
+
+		            $.ajax({
+		                url: url,
+		                beforeSend: function () {
+		                    $("#modal-component").empty();
+		                    $("#modal-loading").show();
+		                },
+		                success: function (message) {
+		                    $("#modal-loading").hide();
+		                    $("#modal-component").html(message);
+		                }
+		            });
+		        });
+
+		        // Delete
+		        $(".delete-btn").click(function(){
+		        	var modul = "@yield('subnav')";
+		        	$(".modal-title").html("Delete " + modul);
+		            var url = modul + "-delete/" + $(this).data("id");
+
+		        	$("#modal-form").modal('show');
+
+		            $.ajax({
+		                url: url,
+		                beforeSend: function () {
+		                    $("#modal-component").empty();
+		                    $("#modal-loading").show();
+		                },
+		                success: function (message) {
+		                    $("#modal-loading").hide();
+		                    $("#modal-component").html(message);
+		                }
+		            });
+		        });
+	        // end ajax load modal
 		</script>
 	@stop
 @stop
