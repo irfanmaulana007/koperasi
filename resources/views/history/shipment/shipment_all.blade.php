@@ -1,4 +1,4 @@
-@section('current-tab','history_shipment_all')
+@section('current-tab','history-shipment-all')
 <!-- Section Table -->
 <thead>
 	<tr>
@@ -26,4 +26,6 @@
 <script>
     $(".tab-items").removeClass("active");
     $("#@yield('current-tab')").addClass("active");
+
+    loading_height();
 </script>

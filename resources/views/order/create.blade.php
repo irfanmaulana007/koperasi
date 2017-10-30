@@ -172,80 +172,87 @@
                             <!-- begin wizard step-3 -->
                             <div class="wizard-step-3">
                                 <fieldset>
-                                    <legend class="pull-left width-full">Item Detail</legend>
-                                    <!-- begin row -->
-                                    <div class="row">
-                                        <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-offset-0">
-                                            <div class="form-group">
-                                                <div class="row">
-                                                    <div class="col-xs-5">
-                                                        <label>Item Name</label>
-                                                    </div>
-                                                    <div class="col-xs-7">
-                                                        <input type="text" name="item_name" placeholder="*Item Name" class="form-control" data-parsley-group="wizard-step-3" required />
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <div class="row">
-                                                    <div class="col-xs-5">
-                                                        <label>Item Quantity</label>
-                                                    </div>
-                                                    <div class="col-xs-7">
-                                                        <select class="form-control" name="item_qty" style="width: auto; float: left;" data-parsley-group="wizard-step-3" required />
-                                                            <option value="1">1</option>
-                                                            @for($i = 2; $i <= 20; $i++)
-                                                                <option value="{{ $i }}">{{ $i }}</option>
-                                                            @endfor
-                                                        </select>
-                                                        <select class="form-control" name="item_type" style="width: auto; float: left; margin-left: 10px;" data-parsley-group="wizard-step-3" required />
-                                                            <option value="Pcs/Units">Pcs/Units</option>
-                                                            <option value="Coli">Coli</option>
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <div class="row">
-                                                    <div class="col-xs-5">
-                                                        <label>Item Value</label>
-                                                    </div>
-                                                    <div class="col-xs-7">
-                                                        <input type="text" name="item_value" placeholder="*Rp" class="form-control" data-parsley-group="wizard-step-3" required />
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <div class="row">
-                                                    <div class="col-xs-5">
-                                                        <label>Item Weight</label>
-                                                    </div>
-                                                    <div class="col-xs-7">
-                                                        <input type="text" name="item_weight" placeholder="*Kg" class="form-control" data-parsley-group="wizard-step-3" data-parsley-type="number" required />
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <div class="row">
-                                                    <div class="col-xs-5">
-                                                        <label>Dimension <small>(Optional)</small></label>
-                                                    </div>
-                                                    <div class="col-xs-7">
-                                                        <div class="pull-left" style="width: 30%; margin-right: 5%;">
-                                                            <input type="text" name="item_dimension_w" placeholder="Width (cm)" class="form-control" data-parsley-group="wizard-step-3" data-parsley-type="number" required />
-                                                        </div>
-                                                        <div class="pull-left" style="width: 30%; margin-right: 5%;">
-                                                            <input type="text" name="item_dimension_h" placeholder="Height (cm)" class="form-control" data-parsley-group="wizard-step-3" data-parsley-type="number" required />
-                                                        </div>
-                                                        <div class="pull-left" style="width: 30%;">
-                                                            <input type="text" name="item_dimension_l" placeholder="Lenght (cm)" class="form-control" data-parsley-group="wizard-step-3" data-parsley-type="number" required />
+                                    <legend class="pull-left width-full">
+                                        <span class="pull-left">Item Detail</span>
+                                        <span id="add-item" class="pull-right" style="cursor: pointer;"><a>+ add new item</a></span>
+                                    </legend>
+                                    <div id="item-body">
+                                        <div class="item-component">
+                                            <!-- begin row -->
+                                            <div class="row">
+                                                <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-offset-0">
+                                                    <div class="form-group">
+                                                        <div class="row">
+                                                            <div class="col-xs-5">
+                                                                <label>Item Name</label>
+                                                            </div>
+                                                            <div class="col-xs-7">
+                                                                <input type="text" name="item_name[]" placeholder="*Item Name" class="form-control" data-parsley-group="wizard-step-3" required />
+                                                            </div>
                                                         </div>
                                                     </div>
+                                                    <div class="form-group">
+                                                        <div class="row">
+                                                            <div class="col-xs-5">
+                                                                <label>Item Quantity</label>
+                                                            </div>
+                                                            <div class="col-xs-7">
+                                                                <select class="form-control" name="item_qty[]" style="width: auto; float: left;" data-parsley-group="wizard-step-3" required />
+                                                                    <option value="1">1</option>
+                                                                    @for($i = 2; $i <= 20; $i++)
+                                                                        <option value="{{ $i }}">{{ $i }}</option>
+                                                                    @endfor
+                                                                </select>
+                                                                <select class="form-control" name="item_type[]" style="width: auto; float: left; margin-left: 10px;" data-parsley-group="wizard-step-3" required />
+                                                                    <option value="Pcs/Units">Pcs/Units</option>
+                                                                    <option value="Coli">Coli</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <div class="row">
+                                                            <div class="col-xs-5">
+                                                                <label>Item Value</label>
+                                                            </div>
+                                                            <div class="col-xs-7">
+                                                                <input type="text" name="item_value[]" placeholder="*Rp" class="form-control" data-parsley-group="wizard-step-3" required />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <div class="row">
+                                                            <div class="col-xs-5">
+                                                                <label>Item Weight</label>
+                                                            </div>
+                                                            <div class="col-xs-7">
+                                                                <input type="text" name="item_weight[]" placeholder="*Kg" class="form-control" data-parsley-group="wizard-step-3" data-parsley-type="number" required />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <div class="row">
+                                                            <div class="col-xs-5">
+                                                                <label>Dimension <small>(Optional)</small></label>
+                                                            </div>
+                                                            <div class="col-xs-7">
+                                                                <div class="pull-left" style="width: 30%; margin-right: 5%;">
+                                                                    <input type="text" name="item_dimension_w[]" placeholder="Width (cm)" class="form-control" data-parsley-group="wizard-step-3" data-parsley-type="number" required />
+                                                                </div>
+                                                                <div class="pull-left" style="width: 30%; margin-right: 5%;">
+                                                                    <input type="text" name="item_dimension_h[]" placeholder="Height (cm)" class="form-control" data-parsley-group="wizard-step-3" data-parsley-type="number" required />
+                                                                </div>
+                                                                <div class="pull-left" style="width: 30%;">
+                                                                    <input type="text" name="item_dimension_l[]" placeholder="Lenght (cm)" class="form-control" data-parsley-group="wizard-step-3" data-parsley-type="number" required />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
+                                            <!-- end row -->
                                         </div>
                                     </div>
-                                    <!-- end row -->
                                 </fieldset>
                             </div>
                             <!-- end wizard step-3 -->
@@ -450,6 +457,15 @@
         <script>
             // FormWizardValidation.init();
             FormWizard.init();
+
+            // add multiple item
+            var item = 2;
+            var item_component = '<hr><div class="item-component"><div class="row"><div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-offset-0"><div class="form-group"><div class="row"><div class="col-xs-5"><label>Item Name</label></div><div class="col-xs-7"><input type="text" name="item_name[]" placeholder="*Item Name" class="form-control" data-parsley-group="wizard-step-3" required /></div></div></div><div class="form-group"><div class="row"><div class="col-xs-5"><label>Item Quantity</label></div><div class="col-xs-7"><select class="form-control" name="item_qty[]" style="width: auto; float: left;" data-parsley-group="wizard-step-3" required ><option value="1">1</option>@for($i = 2; $i <= 20; $i++)<option value="{{ $i }}">{{ $i }}</option>@endfor</select><select class="form-control" name="item_type[]" style="width: auto; float: left; margin-left: 10px;" data-parsley-group="wizard-step-3" required ><option value="Pcs/Units">Pcs/Units</option><option value="Coli">Coli</option></select></div></div></div><div class="form-group"><div class="row"><div class="col-xs-5"><label>Item Value</label></div><div class="col-xs-7"><input type="text" name="item_value[]" placeholder="*Rp" class="form-control" data-parsley-group="wizard-step-3" required /></div></div></div><div class="form-group"><div class="row"><div class="col-xs-5"><label>Item Weight</label></div><div class="col-xs-7"><input type="text" name="item_weight[]" placeholder="*Kg" class="form-control" data-parsley-group="wizard-step-3" data-parsley-type="number" required /></div></div> </div><div class="form-group"><div class="row"><div class="col-xs-5"><label>Dimension <small>(Optional)</small></label></div><div class="col-xs-7"><div class="pull-left" style="width: 30%; margin-right: 5%;"><input type="text" name="item_dimension_w[]" placeholder="Width (cm)" class="form-control" data-parsley-group="wizard-step-3" data-parsley-type="number" required /></div><div class="pull-left" style="width: 30%; margin-right: 5%;"><input type="text" name="item_dimension_h[]" placeholder="Height (cm)" class="form-control" data-parsley-group="wizard-step-3" data-parsley-type="number" required /></div><div class="pull-left" style="width: 30%;"><input type="text" name="item_dimension_l[]" placeholder="Lenght (cm)" class="form-control" data-parsley-group="wizard-step-3" data-parsley-type="number" required /></div></div></div></div></div></div></div>';
+
+            $("#add-item").click(function(){
+                $("#item-body").append(item_component);
+                item++;
+            });
         </script>
     @stop
 @stop

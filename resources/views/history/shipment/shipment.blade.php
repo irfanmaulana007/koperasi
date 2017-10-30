@@ -33,6 +33,13 @@
             $("#table-loading").css("height", table_height);
             $("#table-loading").css("width", table_width);
         });
+        
+        function loading_height(){
+            var table_height = $("#body-content").height();
+            var table_width = $("#body-content").width();
+            $("#table-loading").css("height", table_height);
+            $("#table-loading").css("width", table_width);
+        }
 
         reload_data();
         function reload_data() {

@@ -11,7 +11,7 @@
 		    <!-- begin col-12 -->
 		    <div class="col-md-12">
 		        <!-- begin panel -->
-	            <div class="panel panel-inverse">
+	            <div id="table-panel" class="panel panel-inverse">
 	                <div class="panel-heading">
 	                    <div class="panel-heading-btn">
 	                        <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
@@ -88,6 +88,7 @@
 				$("#btn-print").click(function(){
 					window.print();
 				});
+
 			});
 
 			var action ="";

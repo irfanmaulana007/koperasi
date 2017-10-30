@@ -34,7 +34,7 @@ Route::get('user-delete/{id}', 'UserController@delete');
 // History
 Route::get('history-order', 'HistoryController@order');
 Route::get('history-order-all', 'HistoryController@order_all');
-Route::get('history_order-pickuponly', 'HistoryController@order_pickuponly');
+Route::get('history-order-pickuponly', 'HistoryController@order_pickuponly');
 
 Route::get('history-shipment', 'HistoryController@shipment');
 Route::get('history-shipment-all', 'HistoryController@shipment_all');
