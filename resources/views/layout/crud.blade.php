@@ -29,7 +29,8 @@
 			            <div id="btn-action" class="row">
 			            	<div class="col-md-12">
 								<div class="pull-left">
-									<button type="button" id="btn-add" class="btn btn-primary m-r-5 m-b-5 add-btn @yield('btn-add-display')"><i class="fa fa-plus"></i> Add</button>
+									<button type="button" id="btn-add" class="btn btn-primary m-r-5 m-b-5 add-btn pull-left @yield('btn-add-display')"><i class="fa fa-plus"></i> Add</button>
+									@yield('btn-addition')
 								</div>
 								<div class="pull-right">
 									<button type="button" id="btn-print" class="btn btn-success m-r-5 m-b-5"><i class="fa fa-print"></i> Print</button>

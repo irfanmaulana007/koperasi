@@ -3,7 +3,11 @@
 @section('subnav','user')
 @section('title','User')
 @section('subtitle','404 Users')
-@section('btn-add-display', 'show')
+@section('btn-add-display', 'hide')
+
+@section('btn-addition')
+    <a href="user-add"><button type="button" class="btn btn-primary m-r-5 m-b-5 pull-left"><i class="fa fa-plus"></i> Add</button></a>
+@stop
 
 <!-- Section Table -->
 @section('table-content')

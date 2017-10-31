@@ -19,6 +19,7 @@ Route::get('table', 'HomeController@table');
 
 // Auth
 Route::get('login', 'HomeController@login');
+Route::get('register', 'UserController@create');
 
 // Order
 Route::get('new-order', 'OrderController@new_order');
@@ -27,7 +28,7 @@ Route::get('edit-order', 'OrderController@edit_order');
 
 // User
 Route::get('user', 'UserController@index');
-Route::get('user-add', 'UserController@add');
+Route::get('user-create', 'UserController@create');
 Route::get('user-edit/{id}', 'UserController@edit');
 Route::get('user-delete/{id}', 'UserController@delete');
 

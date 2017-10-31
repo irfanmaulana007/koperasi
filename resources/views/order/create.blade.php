@@ -248,6 +248,17 @@
                                                             </div>
                                                         </div>
                                                     </div>
+                                                    <div class="form-group">
+                                                        <div class="row">
+                                                            <div class="col-xs-5">
+                                                                <label>Service</label>
+                                                            </div>
+                                                            <div class="col-xs-7">
+                                                                <label style="margin-right: 10px;"><input type="radio" name="service[]" data-parsley-group="wizard-step-3" required  style="margin-right: 2px;"/> Pick Only</label>
+                                                                <label style="margin-left: 10px;"><input type="radio" name="service[]" data-parsley-group="wizard-step-3" required style="margin-right: 2px;"/> Pick & Pack</label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
                                             <!-- end row -->
@@ -302,9 +313,9 @@
                                     <legend class="pull-left width-full">Summary</legend>
                                     <!-- begin row -->
                                     <div class="row">
-                                        <div class="col-sm-10 col-sm-offset-1 col-xs-offset-0">
+                                        <div class="col-sm-12">
                                             <div class="row">
-                                                <div class="col-sm-6" style="padding: 15px;">
+                                                <div class="col-sm-5 col-sm-offset-1" style="padding: 15px;">
                                                     <h5 class="lead" style="margin-bottom: 10px">Sender Information</h5>
                                                     <div class="row">
                                                         <div class="col-xs-5">Sender Name</div>
@@ -332,7 +343,7 @@
                                                         <div class="col-xs-6">087880987453</div>
                                                     </div>
                                                 </div>
-                                                <div class="col-sm-6" style="padding: 15px;">
+                                                <div class="col-sm-5 col-sm-offset-1" style="padding: 15px;">
                                                     <h5 class="lead" style="margin-bottom: 10px">Consignee Information</h5>
                                                     <div class="row">
                                                         <div class="col-xs-5">Consignee Name</div>
@@ -360,7 +371,78 @@
                                                         <div class="col-xs-6">087880987453</div>
                                                     </div>
                                                 </div>
-                                                <div class="col-sm-6" style="padding: 15px;">
+                                                <div class="col-md-12" style="margin-top: 30px;">
+                                                    <div class="table-responsive">
+                                                        <table class="table table-striped table-bordered">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th>Name</th>
+                                                                    <th>Quantity</th>
+                                                                    <th>Value</th>
+                                                                    <th>Weight</th>
+                                                                    <th>Dimension</th>
+                                                                    <th>Attribute</th>
+                                                                    <th>Shipping Cost</th>
+                                                                    <th>Insurance Cost</th>
+                                                                    <th>Packing Cost</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td>Macbook pro Retina Display 15"</td>
+                                                                    <td>1 Pcs/Units</td>
+                                                                    <td>Rp 18.500.000</td>
+                                                                    <td>6 Kg</td>
+                                                                    <td></td>
+                                                                    <td></td>
+                                                                    <td>Rp 60.000</td>
+                                                                    <td>Rp 0</td>
+                                                                    <td>Rp 0</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>Macbook pro Retina Display 15"</td>
+                                                                    <td>1 Pcs/Units</td>
+                                                                    <td>Rp 18.500.000</td>
+                                                                    <td>6 Kg</td>
+                                                                    <td></td>
+                                                                    <td></td>
+                                                                    <td>Rp 60.000</td>
+                                                                    <td>Rp 0</td>
+                                                                    <td>Rp 0</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>Macbook pro Retina Display 15"</td>
+                                                                    <td>1 Pcs/Units</td>
+                                                                    <td>Rp 18.500.000</td>
+                                                                    <td>6 Kg</td>
+                                                                    <td></td>
+                                                                    <td></td>
+                                                                    <td>Rp 60.000</td>
+                                                                    <td>Rp 0</td>
+                                                                    <td>Rp 0</td>
+                                                                </tr>
+                                                            </tbody>
+                                                            <tfoot>
+                                                                <tr>
+                                                                    <th>3 Item(s)</th>
+                                                                    <th></th>
+                                                                    <th></th>
+                                                                    <th>18 Kg</th>
+                                                                    <th></th>
+                                                                    <th></th>
+                                                                    <th>Rp 180.000</th>
+                                                                    <th>Rp 0</th>
+                                                                    <th>Rp 0</th>
+                                                                </tr>
+                                                            </tfoot>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <h3 class="f-w-700 pull-left">Vendor : Daytrans</h3>
+                                                    <h3 class="f-w-700 pull-right">Total Cost : Rp 180.000</h3>
+                                                </div>
+                                                {{-- <div class="col-sm-6" style="padding: 15px;">
                                                     <h5 class="lead" style="margin-bottom: 10px">Sender Detail</h5>
                                                     <div class="row">
                                                         <div class="col-xs-5">Item Name</div>
@@ -425,7 +507,7 @@
                                                         <div class="col-xs-1">:</div>
                                                         <div class="col-xs-6">Rp 60.000</div>
                                                     </div>
-                                                </div>
+                                                </div> --}}
                                             </div>
                                             <br><br>
                                             <div class="row">

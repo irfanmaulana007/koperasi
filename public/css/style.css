@@ -6366,9 +6366,22 @@ body .bootstrap-datetimepicker-widget table td {
 
 
 /* Customize */
+.text-grey{color: #707478;}
+
+table#user-access label{
+    line-height: initial;
+}
+table#user-access input{
+    margin-right: 5px;
+}
+
 form label{
     line-height: 34px;
     margin-bottom: 0;
+}
+
+button.btn-wide{
+    padding: 6px 40px;
 }
 
 section#promo .promo-box{

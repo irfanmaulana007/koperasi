@@ -197,7 +197,8 @@
                                 <span>User</span>
                             </a>
                             <ul class="sub-menu">
-                                <li id="subnav-user"><a href="user">User</a></li>
+                                <li id="subnav-create_user"><a href="user-create">Create User</a></li>
+                                <li id="subnav-user"><a href="user">User List</a></li>
                             </ul>
                         </li>
                         <li id="nav-courier" class="has-sub">
@@ -249,6 +250,7 @@
                             </a>
                             <ul class="sub-menu">
                                 <li id="subnav-login"><a href="login">login</a></li>
+                                <li id="subnav-register"><a href="register">register</a></li>
                             </ul>
                         </li>
                         <!-- begin sidebar minify button -->

@@ -14,9 +14,8 @@ class UserController extends BaseController{
     	return view('user.view');
     }
 
-    public function add(){
-    	$action = "add";
-    	return view('user.modal')->with("action", $action);
+    public function create(){
+    	return view('user.create');
     }
 
     public function edit($id){
