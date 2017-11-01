@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateEntityTable extends Migration
+class CreateAddressTypesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,9 @@ class CreateEntityTable extends Migration
      */
     public function up()
     {
-        Schema::create('ms_entity', function (Blueprint $table) {
-            $table->increments('entity_id');
-            $table->string('entity_type_id', 10);
-            $table->string('domain_id', 10);
-            $table->string('entity_name', 50);
-            $table->string('entity_status', 100);
+        Schema::create('ms_address_type', function (Blueprint $table) {
+            $table->increments('address_type_id');
+            $table->string('address_type_name', 50);
             $table->timestamps();
         });
     }
@@ -30,6 +27,6 @@ class CreateEntityTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('ms_entity');
+        Schema::dropIfExists('ms_address_type');
     }
 }

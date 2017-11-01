@@ -23,6 +23,7 @@
                             <div class="col-md-3 col-sm-3">
                                 <div class="profile-photo" style="max-width: 195px; margin: 15px 0 0 15px;">
                                     <div class="img-panel" style="border: 2px solid #ddd; border-radius: 4px; margin-bottom: 10px; min-height: 175px;">
+                                        <i id="img-loading" class="fa fa-spin fa-spinner" style="font-size: 20px; display: none;"></i>
                                         <img src="" alt="">
                                     </div>
                                     <button id="btn-changepicture" class="btn btn-primary btn-block btn-sm" type="file">Change Picture</button>
@@ -190,6 +191,10 @@
         <script>
             $("#btn-changepicture").click(function(){
                 $("#btn-file").click();
+            });
+
+            $("#btn-file").change(function(){
+                $("#img-loading").show();
             });
         </script>
 	@stop

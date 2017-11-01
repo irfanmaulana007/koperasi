@@ -12,24 +12,24 @@ class EntityTypeTableSeeder extends Seeder
      */
     public function run()
     {
-        $user = new EntityType();
-        $user->entity_type_name = 'User';
-        $user->save();
+        $entity_type = new EntityType();
+        $entity_type->entity_type_name = 'User';
+        $entity_type->save();
         
-        $user = new EntityType();
-        $user->entity_type_name = 'Admin';
-        $user->save();
+        $entity_type = new EntityType();
+        $entity_type->entity_type_name = 'Admin';
+        $entity_type->save();
         
-        $user = new EntityType();
-        $user->entity_type_name = 'Super Admin';
-        $user->save();
+        $entity_type = new EntityType();
+        $entity_type->entity_type_name = 'Super Admin';
+        $entity_type->save();
         
-        $user = new EntityType();
-        $user->entity_type_name = 'Staff Operational';
-        $user->save();
+        $entity_type = new EntityType();
+        $entity_type->entity_type_name = 'Staff Operational';
+        $entity_type->save();
         
-        $user = new EntityType();
-        $user->entity_type_name = 'Staff Finance';
-        $user->save();
+        $entity_type = new EntityType();
+        $entity_type->entity_type_name = 'Staff Finance';
+        $entity_type->save();
     }
 }
