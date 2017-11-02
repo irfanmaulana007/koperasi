@@ -9,7 +9,11 @@ var handleDataTableDefault = function() {
 	"use strict";
     
     if ($('#data-table').length !== 0) {
-        $('#data-table').DataTable();
+        $('#data-table').DataTable({ 
+            columnDefs: [ 
+                { orderable: false, targets: ['no-sort'] } 
+            ],
+        });
     }
 };
 

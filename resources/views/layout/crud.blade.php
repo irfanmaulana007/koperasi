@@ -79,7 +79,6 @@
 		<!-- ================== BEGIN PAGE LEVEL JS ================== -->
 		<script src="plugins/DataTables/js/jquery.dataTables.js"></script>
 		<script src="js/table-manage-default.demo.js"></script>
-        <script src="plugins/parsley/dist/parsley.js"></script>
 		<!-- ================== END PAGE LEVEL JS ================== -->
 
 		<script>

@@ -10,7 +10,24 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 class CourierController extends BaseController{
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
-    public function courier_list(){
+    public function index(){
     	return view('courier.view');
+    }
+
+    public function add(){
+    	$action = "add";
+    	return view('courier.modal')->with("action", $action);
+    }
+
+    public function edit($id){
+    	$action = "edit";
+    	return view('courier.modal')->with("action", $action);
+    }
+
+    public function delete($id){
+    	$action = "delete";
+    	return view('courier.modal')
+				->with("action", $action)
+				->with("id", $id);
     }
 }

@@ -6,7 +6,7 @@
 @section('btn-add-display', 'hide')
 
 @section('btn-addition')
-    <a href="user-add"><button type="button" class="btn btn-primary m-r-5 m-b-5 pull-left"><i class="fa fa-plus"></i> Add</button></a>
+    <a href="user-create"><button type="button" class="btn btn-primary m-r-5 m-b-5 pull-left"><i class="fa fa-plus"></i> Add</button></a>
 @stop
 
 <!-- Section Table -->

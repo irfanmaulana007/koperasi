@@ -302,7 +302,7 @@ label {
     position: absolute;
     top: 50%;
     left: 50%;
-    margin: -20px -20px 0 0;
+    margin: -20px 0 0 -20px;
     border: 2px solid #fff;
     border-top: 2px solid #24B498;
     border-radius: 100%;
@@ -6378,6 +6378,9 @@ table#user-access input{
 form label{
     line-height: 34px;
     margin-bottom: 0;
+}
+form.label-initial label{
+    line-height: initial;
 }
 
 button.btn-wide{

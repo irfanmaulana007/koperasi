@@ -38,11 +38,11 @@
                                         <div class="form-group">
                                             <div class="row">
                                                 <div class="col-md-3 col-xs-4 text-right">
-                                                    <label class="text-grey f-w-600">Entity Type <span class="text-danger">*</span></label>
+                                                    <label class="text-grey f-w-600">Role <span class="text-danger">*</span></label>
                                                 </div>
                                                 <div class="col-md-9 col-xs-8">
                                                     <select name="entity_type" id="" class="form-control" data-parsley-required="true">
-                                                        <option value="0" disabled selected>- Select Entity Type -</option>
+                                                        <option value="0" disabled selected>- Select -</option>
                                                         <option value="1">User</option>
                                                         <option value="2">Admin</option>
                                                         <option value="3">Super Admin</option>

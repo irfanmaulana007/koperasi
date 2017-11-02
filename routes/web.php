@@ -42,7 +42,10 @@ Route::get('history-shipment-all', 'HistoryController@shipment_all');
 Route::get('history-shipment-pickuponly', 'HistoryController@shipment_pickuponly');
 
 // Courier
-Route::get('courier-list', 'CourierController@courier_list');
+Route::get('courier', 'CourierController@index');
+Route::get('courier-add', 'CourierController@add');
+Route::get('courier-edit/{id}', 'CourierController@edit');
+Route::get('courier-delete/{id}', 'CourierController@delete');
 
 // Summary
 Route::get('summary-report', 'SummaryController@index');

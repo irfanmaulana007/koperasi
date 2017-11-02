@@ -208,7 +208,7 @@
                                 <span>Courier</span>
                             </a>
                             <ul class="sub-menu">
-                                <li id="subnav-courier_list"><a href="courier-list">Courier List</a></li>
+                                <li id="subnav-courier"><a href="courier">Courier List</a></li>
                             </ul>
                         </li>
                         <li id="nav-history" class="has-sub">
@@ -273,7 +273,7 @@
                 </ol>
                 <!-- end breadcrumb -->
                 <!-- begin page-header -->
-                <h1 class="page-header">@yield('title') <small>@yield('subtitle')</small></h1>
+                <h1 class="page-header">@yield('title') <small><< @yield('subtitle') >></small></h1>
                 @yield('content')
             </div>
             <!-- end body content -->
