@@ -17,46 +17,7 @@
                         <h4 class="panel-title">News and Promo</h4>
                     </div>
                     <div id="body-content" class="panel-body">
-                        <section id="news">
-                            <h3>News</h3>
-                            <br>
-                            <div class="row">
-                                <div class="col-md-12">
-                                    
-                                </div>
-                            </div>
-                        </section>
-                        <hr>
-                        <section id="promo">
-                            <h3>Promo</h3>
-                            <br>
-                            <div class="row">
-                                <div class="col-md-3 col-sm-4 col-xs-6">
-                                    <div class="promo-box">
-                                        <img src="{{ asset('img/picker.png') }}">
-                                    </div>
-                                    <h4 class="text-center">Title Promo</h4>
-                                </div>
-                                <div class="col-md-3 col-sm-4 col-xs-6">
-                                    <div class="promo-box">
-                                        <img src="{{ asset('img/picker.png') }}">
-                                    </div>
-                                    <h4 class="text-center">Title Promo</h4>
-                                </div>
-                                <div class="col-md-3 col-sm-4 col-xs-6">
-                                    <div class="promo-box">
-                                        <img src="{{ asset('img/picker.png') }}">
-                                    </div>
-                                    <h4 class="text-center">Title Promo</h4>
-                                </div>
-                                <div class="col-md-3 col-sm-4 col-xs-6">
-                                    <div class="promo-box">
-                                        <img src="{{ asset('img/picker.png') }}">
-                                    </div>
-                                    <h4 class="text-center">Title Promo</h4>
-                                </div>
-                            </div>
-                        </section>
+                        
                     </div>
                 </div>
                 <!-- end panel -->

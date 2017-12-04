@@ -162,32 +162,22 @@
                     <!-- begin sidebar nav -->
                     <ul class="sidenav nav">
                         <li class="nav-header">Navigation</li>
-                        <li id="nav-feature" class="has-sub active">
-                            <a href="javascript:;">
-                                <b class="caret pull-right"></b>
-                                <i class="fa fa-laptop"></i>
-                                <span>Feature</span>
-                            </a>
-                            <ul class="sub-menu">
-                                <li id="subnav-content"><a href="content">Content</a></li>
-                                <li id="subnav-invoice"><a href="invoice">Invoice</a></li>
-                                <li id="subnav-profile"><a href="profile">Profile</a></li>
-                            </ul>
-                        </li>
                         <li id="nav-dashboard" class="active">
                             <a href="/">
                                 <i class="fa fa-laptop"></i>
                                 <span>Dashboard</span>
                             </a>
                         </li>
-                        <li id="nav-order" class="has-sub">
+                        <li id="nav-master" class="has-sub">
                             <a href="javascript:;">
                                 <b class="caret pull-right"></b>
-                                <i class="fa fa-file-text-o"></i>
-                                <span>Order</span>
+                                <i class="fa fa-cogs"></i>
+                                <span>Master</span>
                             </a>
                             <ul class="sub-menu">
-                                <li id="subnav-create-order"><a href="new-order">Create Order</a></li>
+                                <li id="subnav-master-status"><a href="{{ URL::to('master/status') }}">Status</a></li>
+                                <li id="subnav-master-pinjaman"><a href="{{ URL::to('master/pinjaman') }}">Pinjaman</a></li>
+                                <li id="subnav-master-simpanan"><a href="{{ URL::to('master/simpanan') }}">Simpanan</a></li>
                             </ul>
                         </li>
                         <li id="nav-user" class="has-sub">
@@ -197,49 +187,7 @@
                                 <span>User</span>
                             </a>
                             <ul class="sub-menu">
-                                <li id="subnav-create_user"><a href="user-create">Create User</a></li>
-                                <li id="subnav-user"><a href="user">User List</a></li>
-                            </ul>
-                        </li>
-                        <li id="nav-courier" class="has-sub">
-                            <a href="javascript:;">
-                                <b class="caret pull-right"></b>
-                                <i class="fa fa-truck"></i>
-                                <span>Courier</span>
-                            </a>
-                            <ul class="sub-menu">
-                                <li id="subnav-courier"><a href="courier">Courier List</a></li>
-                            </ul>
-                        </li>
-                        <li id="nav-history" class="has-sub">
-                            <a href="javascript:;">
-                                <b class="caret pull-right"></b>
-                                <i class="fa fa-history"></i>
-                                <span>History</span>
-                            </a>
-                            <ul class="sub-menu">
-                                <li id="subnav-history_order"><a href="history-order">Order</a></li>
-                                <li id="subnav-history_shipment"><a href="history-shipment">Shipment</a></li>
-                            </ul>
-                        </li>
-                        <li id="nav-summary" class="has-sub">
-                            <a href="javascript:;">
-                                <b class="caret pull-right"></b>
-                                <i class="fa fa-bar-chart"></i>
-                                <span>Summary</span>
-                            </a>
-                            <ul class="sub-menu">
-                                <li id="subnav-summary_report"><a href="summary-report">Summary Report</a></li>
-                            </ul>
-                        </li>
-                        <li id="nav-price" class="has-sub">
-                            <a href="javascript:;">
-                                <b class="caret pull-right"></b>
-                                <i class="fa fa-calculator"></i>
-                                <span>Price</span>
-                            </a>
-                            <ul class="sub-menu">
-                                <li id="subnav-check_price"><a href="check-price">Check Price</a></li>
+                                <li id="subnav-user-list"><a href="{{ URL::to('user') }}">User List</a></li>
                             </ul>
                         </li>
                         <li id="nav-auth" class="has-sub">
