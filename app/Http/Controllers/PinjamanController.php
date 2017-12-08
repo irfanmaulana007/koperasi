@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Session;
+use Redirect;
+
+use App\Pinjaman;
 
 class PinjamanController extends Controller
 {
@@ -13,7 +17,10 @@ class PinjamanController extends Controller
      */
     public function index()
     {
-        //
+        Session::forget('message');
+
+        $content = Pinjaman::orderBy('pinjaman_name')->get();
+        return View('master.pinjaman.index')->with('content', $content);
     }
 
     /**
@@ -23,7 +30,10 @@ class PinjamanController extends Controller
      */
     public function create()
     {
-        //
+        $param['pinjaman_name'] = null;
+
+        $content = (object) $param;
+        return View('master.pinjaman.create')->with('content', $content);
     }
 
     /**
@@ -34,7 +44,13 @@ class PinjamanController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $pinjaman = new Pinjaman;
+        $pinjaman->pinjaman_name = $request->get('name');
+        $pinjaman->created_id = 35;
+
+        $pinjaman->save();
+        
+        return redirect('/master/pinjaman')->with('success', 'Create Pinjaman Successfully!');
     }
 
     /**
@@ -56,7 +72,12 @@ class PinjamanController extends Controller
      */
     public function edit($id)
     {
-        //
+        $pinjaman = Pinjaman::where('id',$id)->first();
+        $param['id'] = $pinjaman->id;
+        $param['pinjaman_name'] = $pinjaman->pinjaman_name;
+
+        $content = (object) $param;
+        return View('master.pinjaman.create')->with('content', $content);
     }
 
     /**
@@ -68,7 +89,12 @@ class PinjamanController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $pinjaman = Pinjaman::where('id',$id)->first();
+        $pinjaman->pinjaman_name = $request->get('name');
+        $pinjaman->created_id = 27;
+        $pinjaman->save();
+
+        return redirect('/master/pinjaman')->with('success', 'Update Pinjaman Successfully!');
     }
 
     /**
@@ -79,6 +105,9 @@ class PinjamanController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $pinjaman = Pinjaman::where('id',$id)->first();
+        $pinjaman->delete();
+
+        return redirect('/master/pinjaman')->with('success', 'Delete Pinjaman Successfully!');
     }
 }

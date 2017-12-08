@@ -345,14 +345,14 @@ label {
 }
 .navbar.navbar-inverse .navbar-brand,
 .navbar.navbar-inverse .navbar-nav > li > a {
-    color: #a8acb1;
+    color: #fff;
 }
 .navbar.navbar-inverse .navbar-form .form-control {
     background: url(../img/transparent/black-0.2.png);
     background: rgba(0,0,0,0.2);
     border-color: #1F2429;
     border-color: rgba(0,0,0,0.2);
-    color: #a8acb1;
+    color: #fff;
 }
 .navbar-brand {
     margin-right: 10px;
@@ -551,13 +551,13 @@ label {
 .sidebar .nav > li > a:hover,
 .sidebar .nav > li > a:focus {
     background: #232a2f;
-    color: #a8acb1;
+    color: #fff;
 }
 .sidebar .nav > li.active > a, 
 .sidebar .nav > li.active > a:hover, 
 .sidebar .nav > li.active > a:focus {
     color: #fff;
-    background: #00acac;
+    background: #0090DF;
 }
 .sidebar .nav > li.active > a .label.label-success,
 .sidebar .nav > li.active > a .badge.badge-success {
@@ -2298,7 +2298,7 @@ a.list-group-item.active > .badge,
 
 /* 4.1 Predefined Classes */
 
-.row { margin: 0 -10px; }
+.row { margin: 0; }
 .row > [class*="col-"] {  padding: 0 10px; }
 
 .row.row-space-0 { margin: 0; }
@@ -2501,6 +2501,7 @@ a.list-group-item.active > .badge,
 .f-s-18 { font-size: 18px !important; }
 .f-s-19 { font-size: 19px !important; }
 .f-s-20 { font-size: 20px !important; }
+.f-s-25 { font-size: 25px !important; }
 
 .text-center { text-align: center !important; }
 .text-left { text-align: left !important; }
@@ -2594,6 +2595,7 @@ a.list-group-item.active > .badge,
     border-radius: 50% !important;
 }
 .no-border { border: 0 !important; }
+.border { border: 1px solid #eee !important; }
 .border-top-1 { border-top: 1px solid #eee !important; }
 .border-right-1 { border-right: 1px solid #eee !important; }
 .border-bottom-1 { border-bottom: 1px solid #eee !important; }
@@ -2943,7 +2945,7 @@ a.text-white:focus {
 }
 .datepicker table {
     width: 100%;
-}	        
+}           
 .input-daterange .input-group-addon {
     background: #d6d8dd !important;
     border: none !important;
@@ -3379,7 +3381,7 @@ ul.tagit.inverse li.tagit-choice .tagit-close:focus .ui-icon-close:before {
 }
 
 /* 5.16 Plugins - jVectorMap */
-			    
+                
 .jvectormap-zoomin, .jvectormap-zoomout {
     width: 16px !important;
     height: 16px !important;
@@ -3876,7 +3878,7 @@ ul.tagit.inverse li.tagit-choice .tagit-close:focus .ui-icon-close:before {
 
 
 /* 6.7 Page - Login */
-	    
+        
 .login {
     margin: 168px 0;
     position: relative;
@@ -4148,7 +4150,7 @@ ul.tagit.inverse li.tagit-choice .tagit-close:focus .ui-icon-close:before {
     min-height: 50px;
 }
 .timeline > li + li {
-    margin-top: 40px;
+    margin-top: 25px;
 }
 .timeline .timeline-time {
     position: absolute;
@@ -4179,14 +4181,14 @@ ul.tagit.inverse li.tagit-choice .tagit-close:focus .ui-icon-close:before {
 }
 .timeline .timeline-icon a {
     text-decoration: none;
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     display: inline-block;
     -webkit-border-radius: 50px;
     -moz-border-radius: 50px;
     border-radius: 50px;
     background: #575d63;
-    line-height: 40px;
+    line-height: 30px;
     color: #fff;
     font-size: 14px;
     border: 5px solid #2d353c;
@@ -4203,7 +4205,7 @@ ul.tagit.inverse li.tagit-choice .tagit-close:focus .ui-icon-close:before {
     margin-right: 15%;
     background: #fff;
     position: relative;
-    padding: 20px 30px;
+    padding: 0px 30px;
     border-radius: 4px;
     -moz-border-radius: 4px;
     -webkit-border-radius: 4px;
@@ -4218,7 +4220,7 @@ ul.tagit.inverse li.tagit-choice .tagit-close:focus .ui-icon-close:before {
     top: 20px;
 }
 .timeline-header {
-    padding-bottom: 10px;
+    padding: 5px 0px;
     border-bottom: 1px solid #e2e7eb;
     line-height: 30px;
 }
@@ -4250,7 +4252,7 @@ ul.tagit.inverse li.tagit-choice .tagit-close:focus .ui-icon-close:before {
 .timeline-header + .timeline-content,
 .timeline-header + .timeline-footer,
 .timeline-content + .timeline-footer {
-    margin-top: 20px;
+    margin-top: 5px;
 }
 .timeline-content:before,
 .timeline-content:after {
@@ -6366,24 +6368,56 @@ body .bootstrap-datetimepicker-widget table td {
 
 
 /* Customize */
+#overlay{
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    margin-top: -20px;
+    margin-left: -25px;
+    z-index: 20;
+    background-color: #000;
+    opacity: .7;
+    box-sizing: content-box;
+
+}
+.overlay-active{
+    z-index: 25;
+    position: relative;
+    background-color: white;
+}
+
 .text-grey{color: #707478;}
 
+table tr.odd{
+    background-color: #f0f3f5;
+}
 table#user-access label{
     line-height: initial;
 }
 table#user-access input{
     margin-right: 5px;
 }
-
-form label{
-    line-height: 34px;
-    margin-bottom: 0;
+.table-responsive{
+    padding-bottom: 10px;
 }
+
+ul.dropdown-menu.dropdown-action{
+    background-color: #242a30;
+}
+ul.dropdown-menu li a{
+    color: white;
+}
+ul.dropdown-menu li a:hover{
+    background-color: rgba(255, 255, 255, .1);
+    color: white;
+}
+
 form.label-initial label{
     line-height: initial;
 }
 
-button.btn-wide{
+button.btn-wide, a.btn.btn-wide{
     padding: 6px 40px;
 }
 
@@ -6402,4 +6436,75 @@ section#promo .promo-box img{
     width: 100%;
     height: 100%;
     padding: 20px;
+}
+.input-img-preview{
+    height: 90px;
+}
+.input-img-preview.small{
+    height: 50px;
+    width: auto;
+}
+.input-img-preview img{
+    height: 100%;
+}
+
+.w-auto{
+    width: auto;
+    float: left;
+}
+
+.no-padding{
+    padding: 0px;
+}
+.no-margin{
+    margin: 0px;
+}
+
+.w-30p{
+    width: 30%; 
+    float: left;
+}
+.w-auto{
+    width: auto; 
+    float: left;
+}
+
+/* Select2 Plugin */
+.select2-container--default .select2-selection--single .select2-selection__rendered{
+    font-size: 12px!important;
+}
+.select2-dropdown{
+    border: 1px solid #ccd0d4!important;
+}
+
+#btn-addform{display: none;}
+
+.fa.fa-star, .fa.fa-star-half-o, .fa.fa-star-o {
+  color: #ffcc00; }
+.fa-star.empty {
+color: #ddd; }
+
+.detail .row{margin-bottom: 4px}
+
+@media print {
+    html, body, body *{
+        visibility: hidden;
+        margin: 0;
+        padding: 0;
+    }
+    #pre-content, .panel-heading, .breadcrumb, .page-header, #header{display: none!important;}
+    .fixedHeader, .fixedHeader *{visibility: hidden;}
+    #data-table_wrapper, #data-table-fixedheader_wrapper{position: static!important;page-break-after: always;}
+    table{
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    table, table *{
+        visibility: visible;
+        page-break-after: always;
+    }
+    a[href]:after {
+        content: none !important;
+    }
 }

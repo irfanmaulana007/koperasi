@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Session;
+use Redirect;
+
+use App\Status;
 
 class StatusController extends Controller
 {
@@ -13,7 +17,10 @@ class StatusController extends Controller
      */
     public function index()
     {
-        //
+        Session::forget('message');
+
+        $content = Status::orderBy('status_name')->get();
+        return View('master.status.index')->with('content', $content);
     }
 
     /**
@@ -23,7 +30,10 @@ class StatusController extends Controller
      */
     public function create()
     {
-        //
+        $param['status_name'] = null;
+
+        $content = (object) $param;
+        return View('master.status.create')->with('content', $content);
     }
 
     /**
@@ -34,7 +44,13 @@ class StatusController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $status = new Status;
+        $status->status_name = $request->get('name');
+        $status->created_id = 35;
+
+        $status->save();
+        
+        return redirect('/master/status')->with('success', 'Create Status Successfully!');
     }
 
     /**
@@ -56,7 +72,12 @@ class StatusController extends Controller
      */
     public function edit($id)
     {
-        //
+        $status = Status::where('id',$id)->first();
+        $param['id'] = $status->id;
+        $param['status_name'] = $status->status_name;
+
+        $content = (object) $param;
+        return View('master.status.create')->with('content', $content);
     }
 
     /**
@@ -68,7 +89,12 @@ class StatusController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $status = Status::where('id',$id)->first();
+        $status->status_name = $request->get('name');
+        $status->created_id = 27;
+        $status->save();
+
+        return redirect('/master/status')->with('success', 'Update Status Successfully!');
     }
 
     /**
@@ -79,6 +105,9 @@ class StatusController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $status = Status::where('id',$id)->first();
+        $status->delete();
+
+        return redirect('/master/status')->with('success', 'Delete Status Successfully!');
     }
 }
