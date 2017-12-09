@@ -8,13 +8,17 @@
     
         <!-- ================== BEGIN BASE CSS STYLE ================== -->
         <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
-        <link href="plugins/jquery-ui/themes/base/minified/jquery-ui.min.css" rel="stylesheet" />
-        <link href="plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
-        <link href="plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
-        <link href="css/animate.css" rel="stylesheet" />
-        <link href="css/style.css" rel="stylesheet" />
-        <link href="css/style-responsive.css" rel="stylesheet" />
+        <link href="{{asset('plugins/jquery-ui/themes/base/minified/jquery-ui.min.css')}}" rel="stylesheet" />
+        <link href="{{asset('plugins/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet" />
+        <link href="{{asset('plugins/font-awesome/css/font-awesome.min.css')}}" rel="stylesheet" />
+        <link href="{{asset('css/animate.css')}}" rel="stylesheet" />
+        <link href="{{asset('css/style.css')}}" rel="stylesheet" />
+        <link href="{{asset('css/style-responsive.css')}}" rel="stylesheet" />
         <!-- ================== END BASE CSS STYLE ================== -->
+
+        <!-- ================== BEGIN BASE JS ================== -->
+        <script src="{{asset('plugins/pace/pace.min.js')}}"></script>
+        <!-- ================== END BASE JS ================== -->
 
         @yield('custom-css')
 
@@ -40,7 +44,7 @@
                 <div class="login-header">
                     <div class="brand">
                         <span style="height: auto;"><img src="{{ asset('img/logo.png') }}" style="margin-bottom: 10px;"></span><br>
-                        <small>Mengirim jadi mudah</small>                        
+                        <small>Koperasi Simpan Pinjam</small>                        
                     </div>
                     <div class="icon">
                         <i class="fa fa-sign-in"></i>
@@ -48,12 +52,13 @@
                 </div>
                 <!-- end brand -->
                 <div class="login-content">
-                    <form action="/" class="margin-bottom-0">
+                    <form action="{{action('HomeController@login')}}" method="POST" class="margin-bottom-0" data-parsley-validate="true">
+                        {{ csrf_field() }}
                         <div class="form-group m-b-20">
-                            <input type="text" class="form-control input-lg" placeholder="Email Address" />
+                            <input type="email" name="email" class="form-control input-lg" placeholder="Email Address" autocomplete="off" required autofocus />
                         </div>
                         <div class="form-group m-b-20">
-                            <input type="text" class="form-control input-lg" placeholder="Password" />
+                            <input type="password" name="password" class="form-control input-lg" placeholder="Password" autocomplete="off" required />
                         </div>
                         <div class="checkbox m-b-20">
                             <label style="line-height: initial;">
@@ -71,27 +76,24 @@
         <!-- end page container -->
         
         <!-- ================== BEGIN BASE JS ================== -->
-        <script src="plugins/jquery/jquery-1.9.1.js"></script>
-        <script src="plugins/jquery/jquery-migrate-1.1.0.js"></script>
-        <script src="plugins/bootstrap/js/bootstrap.js"></script>
-        <!--[if lt IE 9]>
-            <script src="assets/crossbrowserjs/html5shiv.js"></script>
-            <script src="assets/crossbrowserjs/respond.min.js"></script>
-            <script src="assets/crossbrowserjs/excanvas.min.js"></script>
-        <![endif]-->
-        <script src="plugins/slimscroll/jquery.slimscroll.js"></script>
-        <script src="plugins/jquery-cookie/jquery.cookie.js"></script>
+        <script src="{{asset('js/general.js')}}"></script>
+        <script src="{{asset('plugins/jquery/jquery-1.9.1.min.js')}}"></script>
+        <script src="{{asset('plugins/jquery/jquery-migrate-1.1.0.min.js')}}"></script>
+        <script src="{{asset('plugins/jquery-ui/ui/minified/jquery-ui.min.js')}}"></script>
+        <script src="{{asset('plugins/bootstrap/js/bootstrap.min.js')}}"></script>
+        <script src="{{asset('plugins/parsley/dist/parsley.js')}}"></script>
+
+        <script src="{{asset('plugins/slimscroll/jquery.slimscroll.min.js')}}"></script>
+        <script src="{{asset('plugins/jquery-cookie/jquery.cookie.js')}}"></script>
         <!-- ================== END BASE JS ================== -->
         
         <!-- ================== BEGIN PAGE LEVEL JS ================== -->
-        <script src="js/login-v2.demo.js"></script>
-        <script src="js/apps.js"></script>
+        <script src="{{asset('js/apps.js')}}"></script>
         <!-- ================== END PAGE LEVEL JS ================== -->
 
         <script>
             $(document).ready(function() {
                 App.init();
-                LoginV2.init();
             });
         </script>
     </body>

@@ -23,6 +23,18 @@
                     <span>Dashboard</span>
                 </a>
             </li>
+            <li id="nav-simpanan" class="active">
+                <a href="/simpanan">
+                    <i class="fa fa-laptop"></i>
+                    <span>Simpanan</span>
+                </a>
+            </li>
+            <li id="nav-pinjaman" class="active">
+                <a href="/pinjaman">
+                    <i class="fa fa-laptop"></i>
+                    <span>Pinjam</span>
+                </a>
+            </li>
             <li id="nav-master" class="has-sub">
                 <a href="javascript:;">
                     <b class="caret pull-right"></b>

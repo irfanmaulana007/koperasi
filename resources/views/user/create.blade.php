@@ -53,12 +53,6 @@
                     <input type="text" name="phone" class="form-control" value="{{ $content->phone }}" placeholder="ex: 081234567891" required autocomplete="off" data-parsley-type="digits" />
                 </div>
             </div>
-            <div class="form-group">
-                <label class="col-md-3 control-label">Simpanan</label>
-                <div class="col-md-6">
-                    <input type="text" name="simpanan" class="form-control" value="{{ $content->simpanan }}" placeholder="ex: 10000" required autocomplete="off" data-parsley-type="digits" />
-                </div>
-            </div>
         </div>
             
         <div class="form-group">

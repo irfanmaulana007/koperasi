@@ -9,6 +9,7 @@ use Redirect;
 use App\User;
 use App\Role;
 use App\Status;
+use App\Saldo;
 
 class UserController extends Controller
 {
@@ -42,6 +43,7 @@ class UserController extends Controller
     {
         $role = Role::get();
         $status = Status::get();
+        $saldo = Saldo::get();
 
         $param['id_role'] = null;
         $param['id_status'] = null;
@@ -55,6 +57,7 @@ class UserController extends Controller
                 ->with('content', $content)
                 ->with('role', $role)
                 ->with('status', $status);
+                ->with('saldo', $saldo);
     }
 
     /**
@@ -71,9 +74,11 @@ class UserController extends Controller
         $user->name = $request->get('name');
         $user->email = $request->get('email');
         $user->phone = $request->get('phone');
-        $user->simpanan = $request->get('simpanan');
-
         $user->save();
+
+        $saldo = new Saldo;
+        $saldo->balance = 0;
+        $saldo->save();
         
         return redirect('/user')->with('success', 'Create User Successfully!');
     }
@@ -107,7 +112,6 @@ class UserController extends Controller
         $param['name'] = $user->name;
         $param['email'] = $user->email;
         $param['phone'] = $user->phone;
-        $param['simpanan'] = $user->simpanan;
 
         $content = (object) $param;
         return View('user.create')
@@ -131,7 +135,6 @@ class UserController extends Controller
         $user->name = $request->get('name');
         $user->email = $request->get('email');
         $user->phone = $request->get('phone');
-        $user->simpanan = $request->get('simpanan');
 
         $user->save();
 

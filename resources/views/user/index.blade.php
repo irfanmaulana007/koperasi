@@ -12,7 +12,7 @@
             <th>User Name</th>
             <th>Email</th>
             <th>Phone</th>
-            <th>Simpanan</th>
+            {{-- <th>Simpanan</th> --}}
             <th>Status</th>
             <th>Member Since</th>
             <th class="no-sort hidden-print hidden-pdf">Action</th>
@@ -25,7 +25,7 @@
                 <td>{{ $value->name }}</td>
                 <td>{{ $value->email }}</td>
                 <td>{{ $value->phone }}</td>
-                <td>Rp {{ number_format($value->simpanan,0,',','.') }}</td>
+                {{-- <td>Rp {{ number_format($value->simpanan,0,',','.') }}</td> --}}
                 <td>{{ $value->id_status }}</td>
                 <td>{{ date('d M Y', strtotime($value->created_at)) }}</td>
                 <td class="hidden-print">

@@ -24,7 +24,7 @@
                     <li><a href="profile">Edit Profile</a></li>
                     <li><a href="javascript:;"><span class="badge badge-danger pull-right">2</span> Inbox</a></li>
                     <li class="divider"></li>
-                    <li><a href="javascript:;">Log Out</a></li>
+                    <li><a href="/logout">Log Out</a></li>
                 </ul>
             </li>
         </ul>
