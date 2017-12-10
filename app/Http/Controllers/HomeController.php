@@ -20,36 +20,25 @@ class HomeController extends BaseController{
 
     public function index(){
         if(Auth::check()){
-            return view('dashboard');
+            $log = Log::where('id_user', Auth()->id)->get();
+            if(count($log) == 1){
+                $firstlogin = true;
+            }else{
+                $firstlogin = false;
+            }
+            return view('dashboard')
+                    ->with('firstlogin', $firstlogin);
         }else{
-            return view('dashboard');
-            // return view('auth.login');
+            // dd(Auth::check());
+
+            // return view('dashboard');
+            return view('auth.login');
         }
 
-    }
-
-    public function login(Request $request){
-        $email = $request->input('email');
-        $password = $request->input('password');
-        Auth::attempt(['email' => $email, 'password' => $password]);
-        if (Auth::check()) {
-            return redirect()->action('HomeController@index');
-        }else{
-            $error = "Wrong email or password!";
-            return redirect()->action('HomeController@index')->with('data', $error);
-        }
-
-        // dd(Auth::attempt());
-        return redirect()->action('HomeController@index');
-    }
-
-    public function logout(){
-        Auth::logout();
-        return redirect('/');
     }
     
     public function content(){
-    	return view('content');
+        return view('content');
     }
     
     public function profile(){

@@ -52,7 +52,7 @@
                 </div>
                 <!-- end brand -->
                 <div class="login-content">
-                    <form action="{{action('HomeController@login')}}" method="POST" class="margin-bottom-0" data-parsley-validate="true">
+                    <form action="{{action('AuthController@login')}}" method="POST" class="margin-bottom-0" data-parsley-validate="true">
                         {{ csrf_field() }}
                         <div class="form-group m-b-20">
                             <input type="email" name="email" class="form-control input-lg" placeholder="Email Address" autocomplete="off" required autofocus />
@@ -65,8 +65,15 @@
                                 <input type="checkbox" /> Remember Me
                             </label>
                         </div>
+                        @if(isset($error))
+                            <div class="m-b-20">
+                                <span class="text-center center-block" style="color: #e5603b;">*{{ $error }}</span>
+                            </div>
+                        @endif
                         <div class="login-buttons">
                             <button type="submit" class="btn btn-success btn-block btn-lg">Sign me in</button>
+                            <br>
+                            <center><a href="{{ URL::to('register') }}"><i>Didn't have account yet? Register now</i></a></center>
                         </div>
                     </form>
                 </div>

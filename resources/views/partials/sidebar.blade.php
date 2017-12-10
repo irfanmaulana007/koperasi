@@ -23,17 +23,28 @@
                     <span>Dashboard</span>
                 </a>
             </li>
-            <li id="nav-simpanan" class="active">
-                <a href="/simpanan">
+            <li id="nav-simpan" class="active">
+                <a href="{{ URL::to('simpan') }}">
                     <i class="fa fa-laptop"></i>
                     <span>Simpanan</span>
                 </a>
             </li>
-            <li id="nav-pinjaman" class="active">
-                <a href="/pinjaman">
+            <li id="nav-pinjam" class="active">
+                <a href="{{ URL::to('pinjam') }}">
                     <i class="fa fa-laptop"></i>
                     <span>Pinjam</span>
                 </a>
+            </li>
+            <li id="nav-transaction" class="has-sub">
+                <a href="javascript:;">
+                    <b class="caret pull-right"></b>
+                    <i class="fa fa-user"></i>
+                    <span>Transaction</span>
+                </a>
+                <ul class="sub-menu">
+                    <li id="subnav-pinjaman-list"><a href="{{ URL::to('pinjaman-list') }}">Pinjaman</a></li>
+                    <li id="subnav-simpanan-list"><a href="{{ URL::to('simpanan-list') }}">Simpanan</a></li>
+                </ul>
             </li>
             <li id="nav-master" class="has-sub">
                 <a href="javascript:;">

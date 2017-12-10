@@ -4,9 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class TrsSimpananController extends Controller
+class PinjamanListController extends Controller
 {
 	public function index(){
-		return view('simpan.index');
+		return view('transaction.simpanan.index');
 	}
 }

@@ -16,9 +16,10 @@ Route::get('/', 'HomeController@index');
 
 // Auth
 Route::get('login', 'HomeController@index');
-Route::post('login','HomeController@login');
-Route::get('logout','HomeController@logout');
-Route::get('register', 'UserController@create');
+Route::post('login','AuthController@login');
+Route::get('logout','AuthController@logout');
+Route::get('register', 'AuthController@register');
+Route::post('register', 'AuthController@doRegister');
 
 // Master
 Route::resource('master/pinjaman', 'PinjamanController');
@@ -27,8 +28,12 @@ Route::resource('master/simpanan', 'SimpananController');
 Route::resource('master/status', 'StatusController');
 
 // Transaction
+// For User
 Route::get('simpan', 'TrsSimpananController@index');
 Route::get('pinjam', 'TrsPinjamanCOntroller@index');
+// For Admin - List
+Route::get('simpanan-list', 'SimpananListController@index');
+Route::get('pinjaman-list', 'PinjamanListController@index');
 
 // User
 Route::get('staff', 'UserController@staff');
