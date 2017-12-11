@@ -12,8 +12,8 @@
         <link href="{{asset('plugins/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet" />
         <link href="{{asset('plugins/font-awesome/css/font-awesome.min.css')}}" rel="stylesheet" />
         <link href="{{asset('css/animate.css')}}" rel="stylesheet" />
-        <link href="{{asset('css/style.css')}}" rel="stylesheet" />
-        <link href="{{asset('css/style-responsive.css')}}" rel="stylesheet" />
+        <link href="{{asset('css/style-min.css')}}" rel="stylesheet" />
+        <link href="{{asset('css/style-responsive-min.css')}}" rel="stylesheet" />
         <!-- ================== END BASE CSS STYLE ================== -->
 
         <!-- ================== BEGIN BASE JS ================== -->
@@ -43,7 +43,7 @@
                 <!-- begin brand -->
                 <div class="login-header">
                     <div class="brand">
-                        <span style="height: auto;"><img src="{{ asset('img/logo.png') }}" style="margin-bottom: 10px;"></span><br>
+                        <span style="height: auto;">Koperasi</span><br>
                         <small>Koperasi Simpan Pinjam</small>                        
                     </div>
                     <div class="icon">
@@ -82,7 +82,7 @@
         <!-- end page container -->
         
         <!-- ================== BEGIN BASE JS ================== -->
-        <script src="{{asset('js/general.js')}}"></script>
+        <script src="{{asset('js/general-min.js')}}"></script>
         <script src="{{asset('plugins/jquery/jquery-1.9.1.min.js')}}"></script>
         <script src="{{asset('plugins/jquery/jquery-migrate-1.1.0.min.js')}}"></script>
         <script src="{{asset('plugins/jquery-ui/ui/minified/jquery-ui.min.js')}}"></script>
@@ -94,7 +94,7 @@
         <!-- ================== END BASE JS ================== -->
         
         <!-- ================== BEGIN PAGE LEVEL JS ================== -->
-        <script src="{{asset('js/apps.js')}}"></script>
+        <script src="{{asset('js/apps-min.js')}}"></script>
         <!-- ================== END PAGE LEVEL JS ================== -->
 
         <script>

@@ -8,6 +8,6 @@ class TrsAngsuran extends Model
 {
     protected $table = 'trs_angsuran';
     protected $fillable = [
-        'id_pinjaman','jumlah_pinjaman','keterangan',
+        'id_pinjaman','jumlah_angsuran','keterangan','id_status','tanggal_pembayaran'
     ];
 }

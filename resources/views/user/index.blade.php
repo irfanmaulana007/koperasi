@@ -12,6 +12,7 @@
             <th>User Name</th>
             <th>Email</th>
             <th>Phone</th>
+            <th>Total Pinjaman</th>
             {{-- <th>Simpanan</th> --}}
             <th>Status</th>
             <th>Member Since</th>
@@ -20,13 +21,17 @@
     </thead>
     <tbody>
         @foreach($content as $key => $value)
+            <?php 
+                $total_pinjaman = DB::table('trs_pinjaman')->where('id_user', $value->id)->sum('jumlah_pinjaman');
+            ?>
             <tr>
                 <td>{{ $loop->iteration }}</td>
                 <td>{{ $value->name }}</td>
                 <td>{{ $value->email }}</td>
                 <td>{{ $value->phone }}</td>
+                <td>Rp {{ number_format($total_pinjaman,0,',','.') }}</td>
                 {{-- <td>Rp {{ number_format($value->simpanan,0,',','.') }}</td> --}}
-                <td>{{ $value->id_status }}</td>
+                <td>{{ $value->status_name }}</td>
                 <td>{{ date('d M Y', strtotime($value->created_at)) }}</td>
                 <td class="hidden-print">
                     <div class="btn-group m-r-5 m-b-5">

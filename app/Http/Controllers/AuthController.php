@@ -12,22 +12,20 @@ class AuthController extends Controller
 {	
 
     public function login(Request $request){
-        // $email = $request->input('email');
-        // $password = $request->input('password');
-
+        $afterlogin = true;
 	    $credentials = [
 	        'email' => $request['email'],
 	        'password' => $request['password'],
 	    ];
-	    // dd($credentials);
 
         Auth::attempt($credentials);
-        // dd(Auth::attempt(['email' => $email, 'password' => $password]));
         if (Auth::check()) {
-			return "akhirnya"        	;
-            // return redirect()->action('HomeController@index');
+        	$log = new Log;
+        	$log->id_user = Auth::id();
+        	$log->save();
+
+            return redirect()->action('HomeController@index')->with('afterlogin', $afterlogin);
         }else{
-        	// return "gabisa masuk";
             $error = "Wrong email or password!";
             return view('auth.login')->with('error', $error);
         }
@@ -51,13 +49,19 @@ class AuthController extends Controller
     	$user->id_status = 2; // 1 = Status -> Active
     	$user->name = $request->input('name');
     	$user->email = $request->input('email');
-    	$user->password = $request->input('password');
+    	$user->password = bcrypt($request->input('password'));
     	$user->phone = $request->input('phone');
     	$user->save();
 
-    	$firstlogin = true;
+	    $credentials = [
+	        'email' => $request['email'],
+	        'password' => $request['password'],
+	    ];
+        Auth::attempt($credentials);
+    	$log = new Log;
+    	$log->id_user = Auth::id();
+    	$log->save();
 
-        return redirect()->action('HomeController@index')
-        				 ->with('firstlogin', $firstlogin);
+        return redirect()->action('HomeController@index');
     }
 }

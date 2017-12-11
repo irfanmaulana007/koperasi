@@ -12,8 +12,8 @@
         <link href="{{asset('plugins/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet" />
         <link href="{{asset('plugins/font-awesome/css/font-awesome.min.css')}}" rel="stylesheet" />
         <link href="{{asset('css/animate.css')}}" rel="stylesheet" />
-        <link href="{{asset('css/style.css')}}" rel="stylesheet" />
-        <link href="{{asset('css/style-responsive.css')}}" rel="stylesheet" />
+        <link href="{{asset('css/style-min.css')}}" rel="stylesheet" />
+        <link href="{{asset('css/style-responsive-min.css')}}" rel="stylesheet" />
         <!-- ================== END BASE CSS STYLE ================== -->
 
         <link href="{{asset('plugins/DataTables/css/data-table.css')}}" rel="stylesheet" />
@@ -52,6 +52,7 @@
                 <!-- begin page-header -->
                 <h1 class="page-header">@yield('title') <small>@yield('subtitle')</small></h1>
                 
+                @yield('before-content')
                 <!-- begin row -->
                 <div class="row">
                     <!-- begin col-12 -->
@@ -90,38 +91,25 @@
 
         
         <!-- ================== BEGIN BASE JS ================== -->
-        <script src="{{asset('js/general.js')}}"></script>
+        <script src="{{asset('js/general-min.js')}}"></script>
         <script src="{{asset('plugins/jquery/jquery-1.9.1.min.js')}}"></script>
         <script src="{{asset('plugins/jquery/jquery-migrate-1.1.0.min.js')}}"></script>
         <script src="{{asset('plugins/jquery-ui/ui/minified/jquery-ui.min.js')}}"></script>
         <script src="{{asset('plugins/bootstrap/js/bootstrap.min.js')}}"></script>
         <script src="{{asset('plugins/parsley/dist/parsley.js')}}"></script>
+        <script src="{{asset('plugins/sweetalert/dist/sweetalert.min.js')}}"></script>
 
         <!--[if lt IE 9]>
-            <script src="crossbrowserjs/html5shiv.js"></script>
-            <script src="crossbrowserjs/respond.min.js"></script>
-            <script src="crossbrowserjs/excanvas.min.js"></script>
         <![endif]-->
         <script src="{{asset('plugins/slimscroll/jquery.slimscroll.min.js')}}"></script>
         <script src="{{asset('plugins/jquery-cookie/jquery.cookie.js')}}"></script>
         <!-- ================== END BASE JS ================== -->
         
         <!-- ================== BEGIN PAGE LEVEL JS ================== -->
-  {{--       <script src="plugins/gritter/js/jquery.gritter.js"></script>
-        <script src="plugins/flot/jquery.flot.min.js"></script>
-        <script src="plugins/flot/jquery.flot.time.min.js"></script>
-        <script src="plugins/flot/jquery.flot.resize.min.js"></script>
-        <script src="plugins/flot/jquery.flot.pie.min.js"></script>
-        <script src="plugins/sparkline/jquery.sparkline.js"></script>
-        <script src="plugins/jquery-jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
-        <script src="plugins/jquery-jvectormap/jquery-jvectormap-world-mill-en.js"></script>
-        <script src="plugins/bootstrap-datepicker/js/bootstrap-datepicker.js"></script> --}}
         <script src="{{asset('plugins/DataTables/js/jquery.dataTables.js')}}"></script>
         <script src="{{asset('plugins/DataTables/js/dataTables.fixedHeader.js')}}"></script>
-        <script src="{{asset('plugins/jsPDF-master/dist/jspdf.min.js')}}"></script>
-        <script src="{{asset('plugins/jsPDF-AutoTable-master/dist/jspdf.plugin.autotable.min.js')}}"></script>
         <script src="{{asset('js/table-manage-default.demo.js')}}"></script>
-        <script src="{{asset('js/apps.js')}}"></script>
+        <script src="{{asset('js/apps-min.js')}}"></script>
         <!-- ================== END PAGE LEVEL JS ================== -->
         
         <script>

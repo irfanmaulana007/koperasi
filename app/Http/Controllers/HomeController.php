@@ -8,30 +8,27 @@ use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Http\Request;
 
+use App\Log;
 use App\User;
+use App\TrsPinjaman;
+use App\TrsAngsuran;
+use App\TrsSimpanan;
 use Auth;
 
 class HomeController extends BaseController{
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
-    // public function index(){
-    // 	return view('dashboard');
-    // }
-
     public function index(){
         if(Auth::check()){
-            $log = Log::where('id_user', Auth()->id)->get();
-            if(count($log) == 1){
-                $firstlogin = true;
-            }else{
-                $firstlogin = false;
-            }
-            return view('dashboard')
+            $log = Log::where('id_user', Auth::id())->get();
+            $user = User::get();
+            $pinjaman = TrsPinjaman::where('id_status', 4)->sum('jumlah_pinjaman');
+            $angsuran = TrsAngsuran::where('id_status', 4)->sum('jumlah_angsuran');
+            $simpanan = TrsSimpanan::where('id_status', 4)->sum('jumlah_simpanan');
+            $firstlogin = false;
+            return view('dashboard', compact('log','user','pinjaman','angsuran','simpanan'))
                     ->with('firstlogin', $firstlogin);
         }else{
-            // dd(Auth::check());
-
-            // return view('dashboard');
             return view('auth.login');
         }
 

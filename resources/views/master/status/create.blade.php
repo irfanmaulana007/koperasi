@@ -16,7 +16,7 @@
             <div class="form-group">
                 <label class="col-md-3 control-label">Status Name</label>
                 <div class="col-md-6">
-                    <input type="text" name="name" class="form-control" value="{{ $content->status_name }}" placeholder="ex: Admin" required autocomplete="off" autofocus />
+                    <input type="text" name="name" class="form-control" value="{{ $content->status_name }}" placeholder="Status Name" required autocomplete="off" autofocus />
                 </div>
             </div>
         </div>

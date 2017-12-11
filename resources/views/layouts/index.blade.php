@@ -7,12 +7,7 @@
                 <a href="@yield('link-add')" class="btn btn-primary m-r-5 @yield('display-btn-add')"><i class="fa fa-plus"></i> Add New</a>
                 @yield('btn-left')
             </div>
-            <div class="pull-right">
-                <button type="button" id="btn-print" class="btn btn-success m-r-5 m-b-5 @yield('display-btn-print')"><i class="fa fa-print"></i> Print</button>
-                <button type="button" id="btn-savepdf" class="btn btn-success m-r-5 m-b-5 @yield('display-btn-pdf')"><i class="fa fa-save"></i> Save to PDF</button>
-                @yield('btn-right')
-            </div>
-        </div>            
+        </div>
     </div>
     <br/>
     <div id="pre-content">

@@ -7,18 +7,23 @@ Website: http://www.seantheme.com/color-admin-v1.8/admin/
 
 var handleDatepicker = function() {
     $('#datepicker-default').datepicker({
+        format: 'yyyy-mm-dd',
         todayHighlight: true
     });
     $('#datepicker-inline').datepicker({
+        format: 'yyyy-mm-dd',
         todayHighlight: true
     });
     $('.input-daterange').datepicker({
+        format: 'yyyy-mm-dd',
         todayHighlight: true
     });
     $('#datepicker-disabled-past').datepicker({
+        format: 'yyyy-mm-dd',
         todayHighlight: true
     });
     $('#datepicker-autoClose').datepicker({
+        format: 'yyyy-mm-dd',
         todayHighlight: true,
         autoclose: true
     });

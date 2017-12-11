@@ -28,12 +28,25 @@ Route::resource('master/simpanan', 'SimpananController');
 Route::resource('master/status', 'StatusController');
 
 // Transaction
-// For User
-Route::get('simpan', 'TrsSimpananController@index');
-Route::get('pinjam', 'TrsPinjamanCOntroller@index');
 // For Admin - List
-Route::get('simpanan-list', 'SimpananListController@index');
-Route::get('pinjaman-list', 'PinjamanListController@index');
+Route::get('simpanan-list', 'TrsSimpananController@showall');
+Route::put('simpanan/{id}/approve', 'TrsSimpananController@approve');
+Route::get('pinjaman-list', 'TrsPinjamanController@showall');
+Route::put('pinjaman/{id}/approve', 'TrsPinjamanController@approve');
+Route::get('angsuran-list', 'TrsAngsuranController@showall');
+Route::put('angsuran/{id}/approve', 'TrsAngsuranController@approve');
+
+// For User
+Route::resource('pinjam', 'TrsPinjamanController');
+Route::get('simpan/{id}/tarik', 'TrsSimpananController@tarik');
+Route::post('simpan/{id}/tarik', 'TrsSimpananController@tarikdana');
+Route::resource('simpan', 'TrsSimpananController');
+Route::get('angsur/{id}/angsur', 'TrsAngsuranController@angsur');
+Route::post('angsur/{id}/angsur', 'TrsAngsuranController@doAngsur');
+Route::resource('angsur', 'TrsAngsuranController');
+// Route::get('pinjam', 'TrsPinjamanController@index');
+// Route::get('pinjam/create', 'TrsPinjamanController@create');
+// Route::post('pinjam/create', 'TrsPinjamanController@store');
 
 // User
 Route::get('staff', 'UserController@staff');

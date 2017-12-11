@@ -16,13 +16,13 @@
         <ul class="nav navbar-nav navbar-right">
             <li class="dropdown navbar-user">
                 <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
-                    <img src="assets/img/user-13.jpg" alt="" /> 
-                    <span class="hidden-xs">Adam Schwartz</span> <b class="caret"></b>
+                    <img src="{{asset('img/user-3.jpg')}}" alt="" /> 
+                    <span class="hidden-xs text-capitalize">{{ Auth::user()->name }}</span> <b class="caret"></b>
                 </a>
                 <ul class="dropdown-menu animated fadeInLeft">
                     <li class="arrow"></li>
                     <li><a href="profile">Edit Profile</a></li>
-                    <li><a href="javascript:;"><span class="badge badge-danger pull-right">2</span> Inbox</a></li>
+                    {{-- <li><a href="javascript:;"><span class="badge badge-danger pull-right">2</span> Inbox</a></li> --}}
                     <li class="divider"></li>
                     <li><a href="/logout">Log Out</a></li>
                 </ul>

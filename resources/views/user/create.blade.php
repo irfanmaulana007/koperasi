@@ -28,7 +28,7 @@
                 <label class="col-md-3 control-label">Status</label>
                 <div class="col-md-6">
                     <select name="status" class="form-control" required>
-                        <option value="0" disabled selected>- Select Status -</option>
+                        {{-- <option value="0" disabled selected>- Select Status -</option> --}}
                         @foreach($status as $key => $value)
                             <option value="{{ $value->id }}" {{ ($value->id == $content->id_status) ? 'selected' : ''}}>{{ $value->status_name }}</option>
                         @endforeach
@@ -45,6 +45,12 @@
                 <label class="col-md-3 control-label">Email</label>
                 <div class="col-md-6">
                     <input type="email" name="email" class="form-control" value="{{ $content->email }}" placeholder="ex: john@email.com" required autocomplete="off" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-3 control-label">Password</label>
+                <div class="col-md-6">
+                    <input type="password" name="password" class="form-control" value="{{ $content->password }}" placeholder="" required autocomplete="off" />
                 </div>
             </div>
             <div class="form-group">

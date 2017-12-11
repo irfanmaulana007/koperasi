@@ -12,12 +12,12 @@
     
     <!-- ================== BEGIN BASE CSS STYLE ================== -->
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
-    <link href="plugins/jquery-ui/themes/base/minified/jquery-ui.min.css" rel="stylesheet" />
-    <link href="plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
-    <link href="css/animate.css" rel="stylesheet" />
-    <link href="css/style.css" rel="stylesheet" />
-    <link href="css/style-responsive.css" rel="stylesheet" />
+    <link href="{{asset('plugins/jquery-ui/themes/base/minified/jquery-ui.min.css')}}" rel="stylesheet" />
+    <link href="{{asset('plugins/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet" />
+    <link href="{{asset('plugins/font-awesome/css/font-awesome.min.css')}}" rel="stylesheet" />
+    <link href="{{asset('css/animate.css')}}" rel="stylesheet" />
+    <link href="{{asset('css/style-min.css')}}" rel="stylesheet" />
+    <link href="{{asset('css/style-responsive-min.css')}}" rel="stylesheet" />
     <!-- ================== END BASE CSS STYLE ================== -->
     
     <!-- ================== BEGIN BASE JS ================== -->
@@ -41,7 +41,7 @@
                     Perhaps, there pages will help find what you're looking for.
                 </div>
                 <div>
-                    <a href="index.html" class="btn btn-success">Go Back to Home Page</a>
+                    <a href="/" class="btn btn-success">Go Back to Home Page</a>
                 </div>
             </div>
         </div>
@@ -50,14 +50,14 @@
     </div>
     <!-- end page container -->
     <!-- ================== BEGIN BASE JS ================== -->
-    <script src="plugins/jquery/jquery-1.9.1.min.js"></script>
-    <script src="plugins/jquery/jquery-migrate-1.1.0.min.js"></script>
-    <script src="plugins/bootstrap/js/bootstrap.min.js"></script>
-    <script src="plugins/slimscroll/jquery.slimscroll.min.js"></script>
+    <script src="{{asset('plugins/jquery/jquery-1.9.1.min.js')}}"></script>
+    <script src="{{asset('plugins/jquery/jquery-migrate-1.1.0.min.js')}}"></script>
+    <script src="{{asset('plugins/bootstrap/js/bootstrap.min.js')}}"></script>
+    <script src="{{asset('plugins/slimscroll/jquery.slimscroll.min.js')}}"></script>
     <!-- ================== END BASE JS ================== -->
 
-    <script src="js/dashboard.js"></script>
-    <script src="js/apps.js"></script>
+    <script src="{{asset('js/dashboard-min.js')}}"></script>
+    <script src="{{asset('js/apps-min.js')}}"></script>
     <!-- ================== END PAGE LEVEL JS ================== -->
     
     <script>

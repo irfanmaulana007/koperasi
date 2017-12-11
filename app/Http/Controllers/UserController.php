@@ -5,11 +5,13 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Session;
 use Redirect;
+use DB;
 
 use App\User;
 use App\Role;
 use App\Status;
 use App\Saldo;
+use App\TrsPinjaman;
 
 class UserController extends Controller
 {
@@ -22,8 +24,15 @@ class UserController extends Controller
     {
         Session::forget('message');
 
-        $content = User::where('id_role',3)->orderBy('name')->get();
-        return View('user.index')->with('content', $content);
+        $content = DB::table('ms_user')
+                        ->select('ms_user.*', 'ms_status.status_name')
+                        ->where('id_role', 3) // 3 = Role -> User
+                        ->join('ms_status','ms_user.id_status','=','ms_status.id')
+                        ->orderBy('created_at','Desc')
+                        ->get();
+
+        return View('user.index')
+                ->with('content', $content);
     }
 
     public function staff()
@@ -42,13 +51,14 @@ class UserController extends Controller
     public function create()
     {
         $role = Role::get();
-        $status = Status::get();
+        $status = Status::where('id', 2)->orwhere('id', 3)->get();
         $saldo = Saldo::get();
 
         $param['id_role'] = null;
         $param['id_status'] = null;
         $param['name'] = null;
         $param['email'] = null;
+        $param['password'] = null;
         $param['phone'] = null;
         $param['simpanan'] = null;
 
@@ -56,7 +66,7 @@ class UserController extends Controller
         return View('user.create')
                 ->with('content', $content)
                 ->with('role', $role)
-                ->with('status', $status);
+                ->with('status', $status)
                 ->with('saldo', $saldo);
     }
 
@@ -73,11 +83,13 @@ class UserController extends Controller
         $user->id_status = $request->get('status');
         $user->name = $request->get('name');
         $user->email = $request->get('email');
+        $user->password = bcrypt($request->get('password'));
         $user->phone = $request->get('phone');
         $user->save();
 
         $saldo = new Saldo;
-        $saldo->balance = 0;
+        $saldo->id_user = $user->id;
+        $saldo->saldo = 0;
         $saldo->save();
         
         return redirect('/user')->with('success', 'Create User Successfully!');
@@ -111,6 +123,7 @@ class UserController extends Controller
         $param['id_status'] = $user->id_status;
         $param['name'] = $user->name;
         $param['email'] = $user->email;
+        $param['password'] = $user->password;
         $param['phone'] = $user->phone;
 
         $content = (object) $param;
@@ -134,6 +147,7 @@ class UserController extends Controller
         $user->id_status = $request->get('status');
         $user->name = $request->get('name');
         $user->email = $request->get('email');
+        $user->password = bcrypt($request->get('password'));
         $user->phone = $request->get('phone');
 
         $user->save();
