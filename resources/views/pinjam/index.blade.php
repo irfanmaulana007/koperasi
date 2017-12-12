@@ -11,7 +11,7 @@
             <th>Jumlah Pinjaman</th>
             <th>Keterangan</th>
             <th>Status</th>
-            <th>Status</th>
+            <th>Action</th>
         </tr>
     </thead>
     <tbody>

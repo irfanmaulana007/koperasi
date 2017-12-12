@@ -33,6 +33,12 @@
                         <span>Simpan</span>
                     </a>
                 </li>
+                <li id="nav-tarikdana" class="active">
+                    <a href="{{ URL::to('tarikdana') }}">
+                        <i class="fa fa-inbox"></i>
+                        <span>Tarik Dana</span>
+                    </a>
+                </li>
                 <li id="nav-pinjam" class="active">
                     <a href="{{ URL::to('pinjam') }}">
                         <i class="fa fa-reply-all"></i>

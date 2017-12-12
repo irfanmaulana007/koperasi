@@ -13,7 +13,9 @@ use App\User;
 use App\TrsPinjaman;
 use App\TrsAngsuran;
 use App\TrsSimpanan;
+use App\TrsTarikdana;
 use Auth;
+use DB;
 
 class HomeController extends BaseController{
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
@@ -23,10 +25,21 @@ class HomeController extends BaseController{
             $log = Log::where('id_user', Auth::id())->get();
             $user = User::get();
             $pinjaman = TrsPinjaman::where('id_status', 4)->sum('jumlah_pinjaman');
+            $pinjamanuser = TrsPinjaman::where('id_user', Auth::id())->where('id_status', 4)->sum('jumlah_pinjaman');
             $angsuran = TrsAngsuran::where('id_status', 4)->sum('jumlah_angsuran');
+            $angsuranuser = DB::table('trs_angsuran')
+                        ->select('trs_angsuran.*', 'trs_pinjaman.id_user')
+                        ->join('trs_pinjaman','trs_angsuran.id_pinjaman','=','trs_pinjaman.id')
+                        ->sum('jumlah_angsuran');
             $simpanan = TrsSimpanan::where('id_status', 4)->sum('jumlah_simpanan');
+            $simpananuser = TrsSimpanan::where('id_user', Auth::id())->where('id_status', 4)->sum('jumlah_simpanan');
+            $tarikdana = TrsTarikdana::where('id_status', 4)->sum('jumlah_tarikdana');
+            $tarikdanauser = DB::table('trs_tarikdana')
+                        ->select('trs_tarikdana.*', 'trs_simpanan.id_user')
+                        ->join('trs_simpanan','trs_tarikdana.id_simpanan','=','trs_simpanan.id')
+                        ->sum('jumlah_tarikdana');
             $firstlogin = false;
-            return view('dashboard', compact('log','user','pinjaman','angsuran','simpanan'))
+            return view('dashboard', compact('log','user','pinjaman','pinjamanuser','angsuran','angsuranuser','simpanan','simpananuser','tarikdana','tarikdanauser'))
                     ->with('firstlogin', $firstlogin);
         }else{
             return view('auth.login');

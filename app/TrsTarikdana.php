@@ -8,6 +8,6 @@ class TrsTarikdana extends Model
 {
     protected $table = 'trs_tarikdana';
     protected $fillable = [
-        'id_user','jumlah_tarikan','id_status','created_at'
+        'id_simpanan','jumlah_tarikdana','id_status','created_at'
     ];
 }

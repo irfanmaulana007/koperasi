@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
-@section('nav','master') <!-- ID Current Nav -->
-@section('subnav','master-status') <!-- ID Current Subnav -->
+@section('nav','angsur') <!-- ID Current Nav -->
 
 @section('content') 
     {{-- {{ Form::open(['method' => 'PUT','class' => 'form-horizontal', 'data-parsley-validate' => 'true' , 'route' => ['angsur.doAngsur', $content->id]]) }} --}}

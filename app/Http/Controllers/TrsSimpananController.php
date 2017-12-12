@@ -143,31 +143,31 @@ class TrsSimpananController extends Controller
         return redirect('/simpanan-list')->with('success', 'Approve Simpanan Successfully!');
     }
 
-    public function tarik($id){
-        $simpanan = TrsSimpanan::where('id',$id)->first();
-        $param['id'] = $simpanan->id;
+    // public function tarik($id){
+    //     $simpanan = TrsSimpanan::where('id',$id)->first();
+    //     $param['id'] = $simpanan->id;
 
-        $content = (object) $param;
-        return View('simpan.tarik')
-                ->with('simpanan', $simpanan)
-                ->with('content', $content);
-    }
+    //     $content = (object) $param;
+    //     return View('simpan.tarik')
+    //             ->with('simpanan', $simpanan)
+    //             ->with('content', $content);
+    // }
 
-    public function tarikdana(Request $request){
-        $id = $request->input('id');
-        $jumlah = $request->input('jumlah');
+    // public function tarikdana(Request $request){
+    //     $id = $request->input('id');
+    //     $jumlah = $request->input('jumlah');
 
-        $simpanan = TrsSimpanan::where('id',$id)->first();
-        $simpanan->jumlah_simpanan -= $jumlah;
-        $simpanan->save();
+    //     $simpanan = TrsSimpanan::where('id',$id)->first();
+    //     $simpanan->jumlah_simpanan -= $jumlah;
+    //     $simpanan->save();
 
-        $tarikdana = new TrsTarikdana;
-        $tarikdana->id_user = Auth::id();
-        $tarikdana->jumlah_tarikan = $jumlah;
-        $tarikdana->id_status = 5; // 5 = Status -> Pending
-        $tarikdana->save();
+    //     $tarikdana = new TrsTarikdana;
+    //     $tarikdana->id_user = Auth::id();
+    //     $tarikdana->jumlah_tarikan = $jumlah;
+    //     $tarikdana->id_status = 5; // 5 = Status -> Pending
+    //     $tarikdana->save();
 
 
-        return redirect('/simpan')->with('success', 'Tarik Dana Simpanan Successfully!');
-    }
+    //     return redirect('/simpan')->with('success', 'Tarik Dana Simpanan Successfully!');
+    // }
 }

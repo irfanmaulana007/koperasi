@@ -31,6 +31,8 @@ Route::resource('master/status', 'StatusController');
 // For Admin - List
 Route::get('simpanan-list', 'TrsSimpananController@showall');
 Route::put('simpanan/{id}/approve', 'TrsSimpananController@approve');
+Route::get('tarikdana-list', 'TrsTarikdanaController@showall');
+Route::put('tarikdana/{id}/approve', 'TrsTarikdanaController@approve');
 Route::get('pinjaman-list', 'TrsPinjamanController@showall');
 Route::put('pinjaman/{id}/approve', 'TrsPinjamanController@approve');
 Route::get('angsuran-list', 'TrsAngsuranController@showall');
@@ -44,6 +46,9 @@ Route::resource('simpan', 'TrsSimpananController');
 Route::get('angsur/{id}/angsur', 'TrsAngsuranController@angsur');
 Route::post('angsur/{id}/angsur', 'TrsAngsuranController@doAngsur');
 Route::resource('angsur', 'TrsAngsuranController');
+Route::get('tarikdana/{id}/tarik', 'TrsTarikdanaController@tarikdana');
+Route::post('tarikdana/{id}/tarik', 'TrsTarikdanaController@doTarik');
+Route::resource('tarikdana', 'TrsTarikdanaController');
 // Route::get('pinjam', 'TrsPinjamanController@index');
 // Route::get('pinjam/create', 'TrsPinjamanController@create');
 // Route::post('pinjam/create', 'TrsPinjamanController@store');

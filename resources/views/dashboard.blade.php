@@ -64,6 +64,67 @@
 	        <!-- end col-3 -->
 	    </div>
 	    <!-- end row -->
+	@else
+	 <!-- begin row -->
+	    <div class="row">
+	        <!-- begin col-3 -->
+	        <div class="col-md-3 col-sm-6">
+	            <div class="widget widget-stats bg-green">
+	                <div class="stats-icon"><i class="fa fa-users"></i></div>
+	                <div class="stats-info">
+	                    <h4>TOTAL SIMPANAN</h4>
+	                    <p>Rp {{ number_format($simpananuser - $tarikdanauser,0,",",".") }}</p>   
+	                </div>
+	                <div class="stats-link">
+	                    <a href="{{ URL::to('user') }}">View Detail <i class="fa fa-arrow-circle-o-right"></i></a>
+	                </div>
+	            </div>
+	        </div>
+	        <!-- end col-3 -->
+	        <!-- begin col-3 -->
+	        <div class="col-md-3 col-sm-6">
+	            <div class="widget widget-stats bg-blue">
+	                <div class="stats-icon"><i class="fa fa-reply-all"></i></div>
+	                <div class="stats-info">
+	                    <h4>TOTAL TARIK DANA</h4>
+	                    <p>Rp {{ number_format($tarikdanauser,0,",",".") }}</p>   
+	                </div>
+	                <div class="stats-link">
+	                    <a href="{{ URL::to('tarikdana-list') }}">View Detail <i class="fa fa-arrow-circle-o-right"></i></a>
+	                </div>
+	            </div>
+	        </div>
+	        <!-- end col-3 -->
+	        <!-- begin col-3 -->
+	        <div class="col-md-3 col-sm-6">
+	            <div class="widget widget-stats bg-purple">
+	                <div class="stats-icon"><i class="fa fa-level-up"></i></div>
+	                <div class="stats-info">
+	                    <h4>TOTAL PINJAMAN</h4>
+	                    <p>Rp {{ number_format($pinjamanuser - $angsuranuser,0,",",".") }}</p>   
+	                </div>
+	                <div class="stats-link">
+	                    <a href="{{ URL::to('pinjaman-list') }}">View Detail <i class="fa fa-arrow-circle-o-right"></i></a>
+	                </div>
+	            </div>
+	        </div>
+	        <!-- end col-3 -->
+	        <!-- begin col-3 -->
+	        <div class="col-md-3 col-sm-6">
+	            <div class="widget widget-stats bg-red">
+	                <div class="stats-icon"><i class="fa fa-folder-open-o"></i></div>
+	                <div class="stats-info">
+	                    <h4>TOTAL ANGSURAN</h4>
+	                    <p>Rp {{ number_format($angsuranuser,0,",",".") }}</p>   
+	                </div>
+	                <div class="stats-link">
+	                    <a href="{{ URL::to('angsuran-list') }}">View Detail <i class="fa fa-arrow-circle-o-right"></i></a>
+	                </div>
+	            </div>
+	        </div>
+	        <!-- end col-3 -->
+	    </div>
+	    <!-- end row -->
 	@endif
 @stop
 

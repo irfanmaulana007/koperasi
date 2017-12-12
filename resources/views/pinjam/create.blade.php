@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
-@section('nav','master') <!-- ID Current Nav -->
-@section('subnav','master-status') <!-- ID Current Subnav -->
+@section('nav','pinjam') <!-- ID Current Nav -->
 
 @section('content') 
     @if(isset($content->id))
