@@ -13,7 +13,7 @@
                 <div class="col-md-6">
                      <div class="input-group">
                         <span class="input-group-addon">Rp</span>
-                        <input type="text" name="jumlah" class="form-control" value="{{ $content->jumlah_tarikdana }}" autofocus placeholder="Jumlah Dana" />
+                        <input type="text" name="jumlah" class="form-control" value="{{ $content->jumlah_tarikdana }}" autofocus placeholder="Jumlah Dana" max="{{ $simpanan->jumlah_simpanan }}" required />
                     </div>
                 </div>
             </div>

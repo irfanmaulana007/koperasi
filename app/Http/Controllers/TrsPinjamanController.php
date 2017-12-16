@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\SukuBunga;
 use App\TrsPinjaman;
 use App\User;
 use Auth;
@@ -34,11 +35,14 @@ class TrsPinjamanController extends Controller
      */
     public function create()
     {
+        $sukubunga = SukuBunga::orderby('jangka_waktu')->get();
         $param['jumlah_pinjaman'] = null;
         $param['keterangan'] = null;
 
         $content = (object) $param;
-        return view('pinjam.create')->with('content', $content);
+        return view('pinjam.create')
+                ->with('sukubunga', $sukubunga)
+                ->with('content', $content);
     }
 
     /**
@@ -51,6 +55,7 @@ class TrsPinjamanController extends Controller
     {
         $pinjam = new TrsPinjaman;
         $pinjam->id_user = Auth::id();
+        $pinjam->id_sukubunga = $request->input('sukubunga');
         $pinjam->jumlah_pinjaman = $request->input('jumlah');
         $pinjam->keterangan = $request->input('keterangan');
         $pinjam->id_status = 5; // 5 = Status -> Pending
@@ -78,13 +83,17 @@ class TrsPinjamanController extends Controller
      */
     public function edit($id)
     {
+        $sukubunga = SukuBunga::orderby('jangka_waktu')->get();
         $pinjaman = TrsPinjaman::where('id',$id)->first();
         $param['id'] = $pinjaman->id;
         $param['jumlah_pinjaman'] = $pinjaman->jumlah_pinjaman;
+        $param['id_sukubunga'] = $pinjaman->id_sukubunga;
         $param['keterangan'] = $pinjaman->keterangan;
 
         $content = (object) $param;
-        return View('pinjam.create')->with('content', $content);
+        return View('pinjam.create')
+                ->with('sukubunga', $sukubunga)
+                ->with('content', $content);
     }
 
     /**

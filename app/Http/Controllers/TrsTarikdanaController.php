@@ -68,22 +68,15 @@ class TrsTarikdanaController extends Controller
                         ->select('trs_tarikdana.*', 'ms_status.status_name')
                         ->where('id_simpanan', $id)
                         ->join('ms_status','trs_tarikdana.id_status','=','ms_status.id')
-                        ->orderBy('created_at','Desc')
+                        ->orderBy('created_at','ASC')
                         ->get();
 
-        $jumlah_simpanan     = TrsTarikdana::where('id_simpanan', $id)->get();
-
-        // $content = DB::table('trs_pinjaman')
-        //                 ->select('trs_pinjaman.*', 'ms_status.status_name')
-        //                 ->where('id_user', Auth::id())
-        //                 ->where('id_status', 4) // 4 = Status -> Approved
-        //                 ->join('ms_status','trs_pinjaman.id_status','=','ms_status.id')
-        //                 ->orderBy('created_at','Desc')
-        //                 ->get();
-        // $pinjaman = TrsPinjaman::where('id_user', Auth::id())->get();
-        // $content = TrsAnguran::get();
+        $total_tarikan = TrsTarikdana::where('id', $id)->sum('jumlah_tarikdana');
+        $jumlah_simpanan = TrsSimpanan::where('id', $id)->first();
         return view('tarikdana.show')
                 ->with('id', $id)
+                ->with('total_tarikan', $total_tarikan)
+                ->with('jumlah_simpanan', $jumlah_simpanan)
                 ->with('content', $content);
     }
 
@@ -137,7 +130,7 @@ class TrsTarikdanaController extends Controller
         if(Auth::user()->id_role == 2){ // 2 = Role -> Admin
            return redirect('/tarikdana-list')->with('success', 'Delete Tarikdana Successfully!');
         }else{
-           return redirect('/tarikdana')->with('success', 'Delete Tarikdana Successfully!');
+           return redirect()->action('TrsTarikdanaController@show')->with('success', 'Delete Tarikdana Successfully!');
         }
     }
 
@@ -148,7 +141,10 @@ class TrsTarikdanaController extends Controller
         $param['jumlah_tarikdana'] = null;
 
         $content = (object) $param;
-        return view('tarikdana.create')->with('content', $content);
+
+        return view('tarikdana.create')
+                ->with('simpanan', $simpanan)
+                ->with('content', $content);
     }
 
     public function doTarik(Request $request){

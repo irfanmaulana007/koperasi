@@ -22,6 +22,17 @@
                 </div>
             </div>
             <div class="form-group">
+                <label class="col-md-3 control-label">Jangka Waktu</label>
+                <div class="col-md-6">
+                    <select name="sukubunga" id="sukubunga" class="form-control" required>
+                        <option value="0">- Select Jangka Waktu -</option>
+                        @foreach($sukubunga as $key => $value)
+                            <option value="{{ $value->id }}" {{ ($content->id_sukubunga == $value->id) ? 'selected' : '' }}>{{ $value->jangka_waktu }} Bulan - {{ $value->suku_bunga }} %</option>
+                        @endforeach
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
                 <label class="col-md-3 control-label">Keterangan</label>
                 <div class="col-md-6">
                     <input type="text" name="keterangan" class="form-control" value="{{ $content->keterangan }}" placeholder="Ex: pinjaman modal" required autocomplete="off"/>

@@ -9,6 +9,7 @@
 @section('table-content')  <!-- Table Content - thead, tbody, tfoot -->
     <thead>
         <tr>
+            <th>No</th>
             <th>Tanggal</th>
             <th>Jumlah Simpanan Awal</th>
             <th>Jumlah Sisa Simpanan</th>
@@ -23,6 +24,7 @@
             $sisasimpanan = $value->jumlah_simpanan - $tarikan;
         ?>
             <tr>
+                <td>{{ $loop->iteration }}</td>
                 <td>{{ date('d M Y', strtotime($value->created_at)) }}</td>
                 <td>Rp {{ number_format($value->jumlah_simpanan,0,",",".") }}</td>
                 <td>Rp {{ number_format($sisasimpanan,0,",",".") }}</td>

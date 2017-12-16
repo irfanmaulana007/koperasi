@@ -11,11 +11,7 @@
             <div class="pull-left">
                 <a href="{{ URL::to('/tarikdana/' . $id . '/tarik') }}" class="btn btn-primary m-r-5"><i class="fa fa-plus"></i> Add New</a>
             </div>
-            <div class="pull-right">
-                <button type="button" id="btn-print" class="btn btn-success m-r-5 m-b-5"><i class="fa fa-print"></i> Print</button>
-                <button type="button" id="btn-savepdf" class="btn btn-success m-r-5 m-b-5"><i class="fa fa-save"></i> Save to PDF</button>
-            </div>
-        </div>            
+        </div>
     </div>
     <br>
     <div class="table-responsive">
@@ -39,6 +35,13 @@
                 @endforeach
            </tbody>
         </table>
-        <br><br>
+    </div>
+    <div class="row">
+        <div class="col-xs-6">
+            Total Simpanan = <b>Rp {{ number_format($jumlah_simpanan->jumlah_simpanan,0,",",".") }}</b>
+        </div>
+        <div class="col-xs-6">
+            <a href="{{ URL::to('/tarikdana/') }}" class="btn btn-default pull-right">Back</a>
+        </div>
     </div>
 @stop

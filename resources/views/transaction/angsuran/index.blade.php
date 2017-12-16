@@ -10,7 +10,9 @@
 @section('table-content')  <!-- Table Content - thead, tbody, tfoot -->
     <thead>
         <tr>
+            <th>No</th>
             <th>Tanggal</th>
+            <th>Keterangan</th>
             <th>Nama User</th>
             <th>Jumlah Angsuran</th>
             <th>Status</th>
@@ -20,7 +22,9 @@
     <tbody>
         @foreach($content as $key => $value)
             <tr>
+                <td>{{ $loop->iteration }}</td>
                 <td>{{ date('d M Y', strtotime($value->created_at)) }}</td>
+                <td>{{ $value->keterangan }}</td>
                 <td>{{ $value->name }}</td>
                 <td>Rp {{ number_format($value->jumlah_angsuran,0,",",".") }}</td>
                 <td>{{ $value->status_name }}</td>

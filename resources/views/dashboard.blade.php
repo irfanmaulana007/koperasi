@@ -26,7 +26,7 @@
 	                <div class="stats-icon"><i class="fa fa-reply-all"></i></div>
 	                <div class="stats-info">
 	                    <h4>TOTAL PINJAMAN</h4>
-	                    <p>Rp {{ number_format($pinjaman,0,",",".") }}</p>   
+	                    <p>Rp {{ number_format($pinjaman,0,",",".")}}</p>   
 	                </div>
 	                <div class="stats-link">
 	                    <a href="{{ URL::to('pinjaman-list') }}">View Detail <i class="fa fa-arrow-circle-o-right"></i></a>
@@ -54,7 +54,7 @@
 	                <div class="stats-icon"><i class="fa fa-folder-open-o"></i></div>
 	                <div class="stats-info">
 	                    <h4>TOTAL SIMPANAN</h4>
-	                    <p>Rp {{ number_format($simpanan,0,",",".") }}</p>   
+	                    <p>Rp {{ number_format($simpanan - $tarikdana,0,",",".") }}</p>   
 	                </div>
 	                <div class="stats-link">
 	                    <a href="{{ URL::to('simpanan-list') }}">View Detail <i class="fa fa-arrow-circle-o-right"></i></a>
@@ -76,7 +76,7 @@
 	                    <p>Rp {{ number_format($simpananuser - $tarikdanauser,0,",",".") }}</p>   
 	                </div>
 	                <div class="stats-link">
-	                    <a href="{{ URL::to('user') }}">View Detail <i class="fa fa-arrow-circle-o-right"></i></a>
+	                    <a href="{{ URL::to('simpan') }}">View Detail <i class="fa fa-arrow-circle-o-right"></i></a>
 	                </div>
 	            </div>
 	        </div>
@@ -90,7 +90,7 @@
 	                    <p>Rp {{ number_format($tarikdanauser,0,",",".") }}</p>   
 	                </div>
 	                <div class="stats-link">
-	                    <a href="{{ URL::to('tarikdana-list') }}">View Detail <i class="fa fa-arrow-circle-o-right"></i></a>
+	                    <a href="{{ URL::to('tarikdana') }}">View Detail <i class="fa fa-arrow-circle-o-right"></i></a>
 	                </div>
 	            </div>
 	        </div>
@@ -101,10 +101,10 @@
 	                <div class="stats-icon"><i class="fa fa-level-up"></i></div>
 	                <div class="stats-info">
 	                    <h4>TOTAL PINJAMAN</h4>
-	                    <p>Rp {{ number_format($pinjamanuser - $angsuranuser,0,",",".") }}</p>   
+	                    <p>Rp {{ ($pinjamanuser - $angsuranuser >= 0) ? number_format($pinjamanuser - $angsuranuser,0,",",".") : 0 }}</p>
 	                </div>
 	                <div class="stats-link">
-	                    <a href="{{ URL::to('pinjaman-list') }}">View Detail <i class="fa fa-arrow-circle-o-right"></i></a>
+	                    <a href="{{ URL::to('pinjaman') }}">View Detail <i class="fa fa-arrow-circle-o-right"></i></a>
 	                </div>
 	            </div>
 	        </div>
@@ -118,7 +118,7 @@
 	                    <p>Rp {{ number_format($angsuranuser,0,",",".") }}</p>   
 	                </div>
 	                <div class="stats-link">
-	                    <a href="{{ URL::to('angsuran-list') }}">View Detail <i class="fa fa-arrow-circle-o-right"></i></a>
+	                    <a href="{{ URL::to('angsuran') }}">View Detail <i class="fa fa-arrow-circle-o-right"></i></a>
 	                </div>
 	            </div>
 	        </div>
@@ -130,8 +130,35 @@
 
 @section('content')
 	@if(Auth::user()->id_role == 3) <!-- 3 = Role -> User -->
-		<h4 class="pantel-title">User</h4>
+		
 	@endif
+
+	<div class="row">
+		<div class="col-sm-6 p-t-10 p-b-10">
+			<h5 class="text-center m-b-20"><b>Perhitungan Cicilan per Bulan</b></h5>
+			<h6 class="text-center">Harga barang + (harga barang x bunga x jangka waktu)</h6>
+			<hr class="m-t-5 m-b-5" style="border-top-color: #ddd;">
+			<h6 class="text-center">Jangka Waktu</h6>
+		</div>
+		<div class="col-sm-6 p-t-10 p-b-10">
+			<table class="table table-striped table-bordered">
+				<thead>
+					<tr>
+						<th>Jangka Waktu</th>
+						<th>Bunga</th>
+					</tr>
+				</thead>
+				<tbody>
+					@foreach($sukubunga as $key => $value)
+						<tr>
+							<td>{{ $value->jangka_waktu }}</td>
+							<td>{{ $value->suku_bunga }}</td>
+						</tr>
+					@endforeach
+				</tbody>
+			</table>
+		</div>
+	</div>
 
 @stop
 

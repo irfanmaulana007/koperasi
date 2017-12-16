@@ -10,6 +10,7 @@ var handleDataTableDefault = function() {
 
     if ($('#data-table').length !== 0) {
         var table = $('#data-table').DataTable({
+            paging: false,
             columnDefs: [ 
                 { orderable: false, targets: ['no-sort'] }
             ],

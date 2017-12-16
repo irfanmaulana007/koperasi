@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\TrsAngsuran;
+use App\SukuBunga;
 use App\TrsPinjaman;
 use App\User;
 use Auth;
@@ -75,10 +76,13 @@ class TrsAngsuranController extends Controller
                         ->select('trs_angsuran.*', 'ms_status.status_name')
                         ->where('id_pinjaman', $id)
                         ->join('ms_status','trs_angsuran.id_status','=','ms_status.id')
-                        ->orderBy('created_at','Desc')
+                        ->orderBy('created_at','ASC')
                         ->get();
 
-        $jumlah_pinjaman = TrsAngsuran::where('id_pinjaman', $id)->get();
+        $total_angsuran = TrsAngsuran::where('id', $id)->sum('jumlah_angsuran');
+
+        // $jumlah_pinjaman = TrsAngsuran::where('id_pinjaman', $id)->first();
+        $jumlah_pinjaman = TrsPinjaman::where('id', $content->id_pinjaman)->first();
 
         // $content = DB::table('trs_pinjaman')
         //                 ->select('trs_pinjaman.*', 'ms_status.status_name')
@@ -90,6 +94,8 @@ class TrsAngsuranController extends Controller
         // $pinjaman = TrsPinjaman::where('id_user', Auth::id())->get();
         // $content = TrsAnguran::get();
         return view('angsur.show')
+                ->with('total_angsuran', $total_angsuran)
+                ->with('jumlah_pinjaman', $jumlah_pinjaman)
                 ->with('id', $id)
                 ->with('content', $content);
     }
@@ -150,7 +156,10 @@ class TrsAngsuranController extends Controller
 
     public function angsur($id){
         $pinjaman = TrsPinjaman::where('id', $id)->first();
-        $angsuran = ($pinjaman->jumlah_pinjaman * 1.1) / 12; // 1.1 = Suku Bunga -> 10%
+        $sukubunga = SukuBunga::where('id', $pinjaman->id_sukubunga)->first();
+        $jangka_waktu = $sukubunga->jangka_waktu;
+        $bunga = $sukubunga->suku_bunga;
+        $angsuran = ($pinjaman->jumlah_pinjaman + ($pinjaman->jumlah_pinjaman * $jangka_waktu * ($bunga / 100))) / $jangka_waktu;
 
         $param['id'] = $id;
         $param['jumlah_angsuran'] = ceil($angsuran);
@@ -174,11 +183,11 @@ class TrsAngsuranController extends Controller
 
     public function showall(){
         $content = DB::table('trs_angsuran')
-                        ->select('trs_angsuran.*', 'ms_status.status_name', 'trs_pinjaman.id_user', 'ms_user.name')
+                        ->select('trs_angsuran.*', 'ms_status.status_name', 'trs_pinjaman.id_user', 'trs_pinjaman.keterangan', 'ms_user.name')
                         ->join('ms_status','trs_angsuran.id_status','=','ms_status.id')
                         ->join('trs_pinjaman','trs_angsuran.id_pinjaman','=','trs_pinjaman.id')
                         ->join('ms_user','trs_pinjaman.id_user','=','ms_user.id')
-                        ->orderBy('created_at','Desc')
+                        ->orderBy('created_at','DESC')
                         ->get();
 
         return View('transaction.angsuran.index')->with('content', $content);

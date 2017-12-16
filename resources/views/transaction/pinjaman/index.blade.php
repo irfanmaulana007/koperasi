@@ -10,6 +10,7 @@
 @section('table-content')  <!-- Table Content - thead, tbody, tfoot -->
     <thead>
         <tr>
+            <th>No</th>
             <th>Tanggal</th>
             <th>Nama User</th>
             <th>Jumlah Pinjaman</th>
@@ -20,12 +21,17 @@
     </thead>
     <tbody>
         @foreach($content as $key => $value)
-            <tr>
+            <?php
+                $pelunasan = DB::table('trs_angsuran')->where('id_pinjaman', $value->id)->count();
+                $tenor = DB::table('ms_sukubunga')->where('id', $value->id_sukubunga)->first();
+            ?>
+            <tr class="{{ ($tenor->jangka_waktu == $pelunasan) ? 'text-success' : '' }}">
+                <td>{{ $loop->iteration }}</td>
                 <td>{{ date('d M Y', strtotime($value->created_at)) }}</td>
                 <td>{{ $value->name }}</td>
                 <td>Rp {{ number_format($value->jumlah_pinjaman,0,",",".") }}</td>
                 <td>{{ $value->keterangan }}</td>
-                <td>{{ $value->status_name }}</td>
+                <td>{{ ($pelunasan == 0) ? $value->status_name : ($tenor->jangka_waktu != $pelunasan) ? 'Belum Lunas' : 'Lunas' }}</td>
                 <td class="hidden-print">
                     <div class="btn-group m-r-5 m-b-5">
                         <a href="javascript:;" data-toggle="dropdown" class="btn btn-success btn-sm dropdown-toggle {{ ($value->id_status == 4) ? 'disabled' : '' }}">

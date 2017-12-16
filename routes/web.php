@@ -26,6 +26,7 @@ Route::resource('master/pinjaman', 'PinjamanController');
 Route::resource('master/role', 'RoleController');
 Route::resource('master/simpanan', 'SimpananController');
 Route::resource('master/status', 'StatusController');
+Route::resource('master/suku-bunga', 'SukuBungaController');
 
 // Transaction
 // For Admin - List

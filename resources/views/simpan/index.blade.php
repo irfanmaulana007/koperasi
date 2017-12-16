@@ -23,7 +23,7 @@
                 <td>{{ $value->status_name }}</td>                
                 <td class="hidden-print">
                     <div class="btn-group m-r-5 m-b-5">
-                        <a href="{{ URL::to('simpan/'.$value->id.'/tarik') }}" class="btn btn-success btn-sm">
+                        <a href="{{ URL::to('tarikdana/'.$value->id) }}" class="btn btn-success btn-sm">
                             Tarik Dana
                         </a>
                     </div>
