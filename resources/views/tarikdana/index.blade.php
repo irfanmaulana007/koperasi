@@ -11,8 +11,7 @@
         <tr>
             <th>No</th>
             <th>Tanggal</th>
-            <th>Jumlah Simpanan Awal</th>
-            <th>Jumlah Sisa Simpanan</th>
+            <th>Jumlah Simpanan</th>
             <th>Keterangan</th>
             <th>Action</th>
         </tr>
@@ -26,7 +25,6 @@
             <tr>
                 <td>{{ $loop->iteration }}</td>
                 <td>{{ date('d M Y', strtotime($value->created_at)) }}</td>
-                <td>Rp {{ number_format($value->jumlah_simpanan,0,",",".") }}</td>
                 <td>Rp {{ number_format($sisasimpanan,0,",",".") }}</td>
                 <td>{{ $value->keterangan }}</td>
                 <td class="hidden-print">

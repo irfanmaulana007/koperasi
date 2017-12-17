@@ -86,8 +86,8 @@
                     </a>
                     <ul class="sub-menu">
                         <li id="subnav-master-sukubunga"><a href="{{ URL::to('master/suku-bunga') }}">Suku Bunga</a></li>
-                        <li id="subnav-master-pinjaman"><a href="{{ URL::to('master/pinjaman') }}">Jenis Pinjaman</a></li>
-                        <li id="subnav-master-simpanan"><a href="{{ URL::to('master/simpanan') }}">Jenis Simpanan</a></li>
+                        {{-- <li id="subnav-master-pinjaman"><a href="{{ URL::to('master/pinjaman') }}">Jenis Pinjaman</a></li> --}}
+                        {{-- <li id="subnav-master-simpanan"><a href="{{ URL::to('master/simpanan') }}">Jenis Simpanan</a></li> --}}
                         <li id="subnav-master-role"><a href="{{ URL::to('master/role') }}">Role</a></li>
                         <li id="subnav-master-status"><a href="{{ URL::to('master/status') }}">Status</a></li>
                     </ul>

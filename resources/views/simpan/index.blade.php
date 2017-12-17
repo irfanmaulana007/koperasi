@@ -8,7 +8,8 @@
     <thead>
         <tr>
             <th>Tanggal</th>
-            <th>Jumlah Simpanan</th>
+            <th>Jumlah Simpanan Awal</th>
+            <th>Jumlah Sisa Simpanan</th>
             <th>Keterangan</th>
             <th>Status</th>
             <th>Action</th>
@@ -16,9 +17,14 @@
     </thead>
     <tbody>
         @foreach($content as $key => $value)
+            <?php
+                $tarikan = DB::table('trs_tarikdana')->where('id_simpanan', $value->id)->where('id_status', 4)->sum('jumlah_tarikdana');
+                $sisasimpanan = $value->jumlah_simpanan - $tarikan;
+            ?>
             <tr>
                 <td>{{ date('d M Y', strtotime($value->created_at)) }}</td>
                 <td>Rp {{ number_format($value->jumlah_simpanan,0,",",".") }}</td>
+                <td>Rp {{ number_format($sisasimpanan,0,",",".") }}</td>
                 <td>{{ $value->keterangan }}</td>
                 <td>{{ $value->status_name }}</td>                
                 <td class="hidden-print">
