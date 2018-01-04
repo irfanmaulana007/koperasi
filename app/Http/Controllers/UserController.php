@@ -155,6 +155,15 @@ class UserController extends Controller
         return redirect('/user')->with('success', 'Update User Successfully!');
     }
 
+    public function activate($id){
+        $user = User::where('id',$id)->first();
+        $user->id_status = 2; // 2 = status => active
+
+        $user->save();
+
+        return redirect('/user')->with('success', 'Activate User Successfully!');   
+    }
+
     /**
      * Remove the specified resource from storage.
      *

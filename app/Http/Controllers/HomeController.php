@@ -40,6 +40,7 @@ class HomeController extends BaseController{
             $tarikdanauser = DB::table('trs_tarikdana')
                         ->select('trs_tarikdana.*', 'trs_simpanan.id_user')
                         ->where('id_user', Auth::id())
+                        ->where('trs_tarikdana.id_status', 4)
                         ->join('trs_simpanan','trs_tarikdana.id_simpanan','=','trs_simpanan.id')
                         ->sum('jumlah_tarikdana');
             $sukubunga = SukuBunga::get();

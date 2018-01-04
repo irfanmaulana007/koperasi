@@ -10,7 +10,7 @@
         <div class="col-xs-12">
             <div class="pull-left">
                 <a href="{{ URL::to('/angsur/' . $id . '/angsur') }}" class="btn btn-primary m-r-5"><i class="fa fa-plus"></i> Add New</a>
-            </div>=
+            </div>
         </div>
     </div>
     <br>
@@ -44,7 +44,9 @@
     </div>
     <div class="row">
         <div class="col-xs-6">
-            Total Pinjaman = <b>Rp {{ number_format($jumlah_pinjaman->jumlah_pinjaman,0,",",".") }}</b>
+            @if(isset($jumlah_pinjaman))
+                Total Pinjaman = <b>Rp {{ number_format($jumlah_pinjaman->jumlah_pinjaman,0,",",".") }}</b>
+            @endif
         </div>
         <div class="col-xs-6">
             <a href="{{ URL::to('/angsur/') }}" class="btn btn-default pull-right">Back</a>

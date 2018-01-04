@@ -56,6 +56,7 @@ Route::resource('tarikdana', 'TrsTarikdanaController');
 
 // User
 Route::get('staff', 'UserController@staff');
+Route::post('user/activate/{id}', 'UserController@activate');
 Route::resource('user', 'UserController');
 
 Route::get('/{url}', 'HomeController@error_404');

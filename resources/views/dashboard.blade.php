@@ -164,7 +164,7 @@
 
 @section('custom-js')
 	<script>
-		@if(count($log) == 1 && $firstlogin == true)
+		@if(count($log) == 1)
 			swal({
 				title: "Welcome {{ Auth::user()->name }}!",
 				text: "Selamat datang di Koperasi Simpan Pinjam",

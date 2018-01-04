@@ -19,7 +19,7 @@
         <!-- end sidebar user -->
         <!-- begin sidebar nav -->
         <ul class="sidenav nav">
-            <li class="nav-header">Navigation</li>
+            <li class="nav-header">Menu</li>
             <li id="nav-dashboard" class="active">
                 <a href="/">
                     <i class="fa fa-laptop"></i>

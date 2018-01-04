@@ -79,10 +79,13 @@ class TrsAngsuranController extends Controller
                         ->orderBy('created_at','ASC')
                         ->get();
 
-        $total_angsuran = TrsAngsuran::where('id', $id)->sum('jumlah_angsuran');
+        $total_angsuran = TrsAngsuran::where('id_pinjaman', $id)->sum('jumlah_angsuran');
 
-        // $jumlah_pinjaman = TrsAngsuran::where('id_pinjaman', $id)->first();
-        $jumlah_pinjaman = TrsPinjaman::where('id', $content->id_pinjaman)->first();
+        if(count($content) == 0){
+            $jumlah_pinjaman = TrsAngsuran::where('id_pinjaman', $id)->first();
+        }else{
+            $jumlah_pinjaman = TrsPinjaman::where('id', $content[0]->id_pinjaman)->first();
+        }
 
         // $content = DB::table('trs_pinjaman')
         //                 ->select('trs_pinjaman.*', 'ms_status.status_name')

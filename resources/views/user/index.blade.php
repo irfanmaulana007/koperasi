@@ -35,6 +35,16 @@
                 <td>{{ $value->status_name }}</td>
                 <td>{{ date('d M Y', strtotime($value->created_at)) }}</td>
                 <td class="hidden-print">
+                    <div class="pull-left">
+                        <a>
+                            {{ Form::open(['method' => 'POSt','class' => 'form-horizontal', 'url' => ['user/activate', $value->id]]) }}
+                                {{ csrf_field() }}
+                                <button class="btn btn-success btn-sm m-r-5 m-b-5">
+                                    Activate
+                                </button>
+                           {{ Form::close() }}
+                        </a>
+                    </div>
                     <div class="btn-group m-r-5 m-b-5">
                         <a href="javascript:;" data-toggle="dropdown" class="btn btn-success btn-sm dropdown-toggle">
                             Action <span class="caret"></span>

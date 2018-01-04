@@ -38,6 +38,7 @@ class TrsPinjamanController extends Controller
         $sukubunga = SukuBunga::orderby('jangka_waktu')->get();
         $param['jumlah_pinjaman'] = null;
         $param['keterangan'] = null;
+        $param['id_sukubunga'] = null;
 
         $content = (object) $param;
         return view('pinjam.create')

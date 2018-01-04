@@ -29,8 +29,10 @@
                 <td>{{ $value->status_name }}</td>                
                 <td class="hidden-print">
                     <div class="btn-group m-r-5 m-b-5">
-                        <a href="{{ URL::to('tarikdana/'.$value->id) }}" class="btn btn-success btn-sm">
-                            Tarik Dana
+                        <a href="{{ URL::to('tarikdana/'.$value->id) }}">
+                            <button class="btn btn-success btn-sm" {{ ($value->id_status == 5) ? 'disabled' : '' }}>
+                                Tarik Dana
+                            </button>
                         </a>
                     </div>
                     <div class="btn-group m-r-5 m-b-5">
